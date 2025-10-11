@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Watch Compare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Watch Compare</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="compare.html">Compare</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact Us</a> 
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section contact-page-section">
+      <h2>Contact Us and Send Feedback</h2>
+      <p>Your opinions are valuable to us. Please use the form below for suggestions about the site, models you'd like to see added, or collaboration proposals.</p>
+      
+      <div class="contact-details">
+        <h3>Contact Information</h3>
+        <p>Email: <a href="mailto:info@watchcompare.online">info@watchcompare.online</a></p>
+        <p>Social Media: (Will be announced soon)</p>
+      </div>
+
+      <div class="contact-form-container">
+          <h3>Feedback Form</h3>
+          <form action="mailto:info@watchcompare.online" method="post" enctype="text/plain" class="feedback-form">
+            <div class="form-group">
+              <label for="name">Your Name and Surname:</label>
+              <input type="text" id="name" name="Name_Surname" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email Address:</label>
+              <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject:</label>
+              <input type="text" id="subject" name="Subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message/Feedback:</label>
+              <textarea id="message" name="Message" rows="6" required></textarea>
+            </div>
+            
+            <button type="submit" class="cta-button">Send Feedback</button>
+          </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 WatchCompare prepared by Aras Tokdemir with <a href="https://cizgifikrim.net" target="_blank">CizgiFikrim</a> company</p>
+  </footer>
+</body>
+</html>

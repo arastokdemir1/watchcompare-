@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare | Watch Compare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>Watch Compare</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="compare.html" class="active">Compare</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a> 
+    </nav>
+</header>
+
+  <main>
+    <div class="compare-wrapper">
+      <div class="compare-box" data-index="1"><button>+</button></div>
+      <div class="compare-box" data-index="2"><button>+</button></div>
+      <div class="compare-box" data-index="3"><button>+</button></div>
+      <div class="compare-box" data-index="4"><button>+</button></div>
+    </div>
+    
+    <div class="table-container">
+        <table id="compareTable" style="display: none;">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+  </main>
+
+  <div class="search-popup" id="searchPopup">
+    <div class="search-box">
+      <h3>Add Watch</h3> 
+      
+      <input type="text" id="watchSearch" placeholder="Type brand or model...">
+      
+      <div id="searchResults"></div>
+      
+      <button id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 WatchCompare prepared by Aras Tokdemir with <a href="https://cizgifikrim.net" target="_blank">CizgiFikrim</a> company</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/compare.js"></script>
+
+</body>
+</html>
