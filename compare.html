@@ -148,7 +148,9 @@
     <h1>Watch Compare</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="compare.html" class="active">Compare</a>
+      <a href="compare.html"class="active">Multi-Compare</a>
+      <a href="search.html">Search</a>
+      <a href="matches.html">Matches</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact Us</a> 
     </nav>
@@ -156,44 +158,42 @@
 
 <main>
     
-    <div id="compare-boxes-container">
-        <div class="compare-box" data-index="1">
-            <button id="select-watch-1-btn" class="select-btn">+</button>
-            <div id="dropdown-panel-1" class="dropdown-panel">
-                <input type="text" id="search-1" placeholder="Search Brand or Model..." onkeyup="filtrele(1)">
-                <div id="marka-listesi-1" class="marka-listesi"></div>
-                <div id="model-listesi-1" class="model-listesi" style="display:none;"></div>
-            </div>
+    <div class="compare-wrapper" id="compare-boxes-container"> 
+    
+    <div class="compare-box" data-index="1">
+        <button id="select-watch-1-btn" class="select-btn" onclick="panelToggle(1)">+</button>
+        <div id="dropdown-panel-1" class="dropdown-panel">
+            <div id="marka-listesi-1" class="marka-listesi"></div>
+            <div id="model-listesi-1" class="model-listesi" style="display:none;"></div>
         </div>
-
-        <div class="compare-box" data-index="2">
-            <button id="select-watch-2-btn" class="select-btn">+</button>
-            <div id="dropdown-panel-2" class="dropdown-panel">
-                <input type="text" id="search-2" placeholder="Search Brand or Model..." onkeyup="filtrele(2)">
-                <div id="marka-listesi-2" class="marka-listesi"></div>
-                <div id="model-listesi-2" class="model-listesi" style="display:none;"></div>
-            </div>
-        </div>
-
-        <div class="compare-box" data-index="3">
-            <button id="select-watch-3-btn" class="select-btn">+</button>
-            <div id="dropdown-panel-3" class="dropdown-panel">
-                <input type="text" id="search-3" placeholder="Search Brand or Model..." onkeyup="filtrele(3)">
-                <div id="marka-listesi-3" class="marka-listesi"></div>
-                <div id="model-listesi-3" class="model-listesi" style="display:none;"></div>
-            </div>
-        </div>
-
-        <div class="compare-box" data-index="4">
-            <button id="select-watch-4-btn" class="select-btn">+</button>
-            <div id="dropdown-panel-4" class="dropdown-panel">
-                <input type="text" id="search-4" placeholder="Search Brand or Model..." onkeyup="filtrele(4)">
-                <div id="marka-listesi-4" class="marka-listesi"></div>
-                <div id="model-listesi-4" class="model-listesi" style="display:none;"></div>
-            </div>
-        </div>
-
     </div>
+
+    <div class="compare-box" data-index="2">
+        <button id="select-watch-2-btn" class="select-btn" onclick="panelToggle(2)">+</button>
+        <div id="dropdown-panel-2" class="dropdown-panel">
+            <div id="marka-listesi-2" class="marka-listesi"></div>
+            <div id="model-listesi-2" class="model-listesi" style="display:none;"></div>
+        </div>
+    </div>
+
+    <div class="compare-box" data-index="3">
+        <button id="select-watch-3-btn" class="select-btn" onclick="panelToggle(3)">+</button>
+        <div id="dropdown-panel-3" class="dropdown-panel">
+            <div id="marka-listesi-3" class="marka-listesi"></div>
+            <div id="model-listesi-3" class="model-listesi" style="display:none;"></div>
+        </div>
+    </div>
+
+    <div class="compare-box" data-index="4">
+        <button id="select-watch-4-btn" class="select-btn" onclick="panelToggle(4)">+</button>
+        <div id="dropdown-panel-4" class="dropdown-panel">
+            <div id="marka-listesi-4" class="marka-listesi"></div>
+            <div id="model-listesi-4" class="model-listesi" style="display:none;"></div>
+        </div>
+    </div>
+    
+</div>
+
     
     <section id="compare-results">
         <p id="initial-message" style="text-align: center;">Please select at least one watch to compare.</p>
