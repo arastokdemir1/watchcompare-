@@ -4,62 +4,62 @@ const brands = [
   {
     name: "Seiko",
     history: "Seiko was founded in Tokyo in 1881 and produced the world's first quartz watch in 1969.",
-    brandImage: "img/brand/seiko-logo.png"
+    brandImage: "img/logo/seiko-logo-png-transparent.png"
   },
   {
     name: "Tissot",
     history: "Founded in Switzerland in 1853, Tissot is known for its quality mechanical and quartz watches.",
-    brandImage: "img/brand/tissot-prx-brand.jpg"
+    brandImage: "img/logo/tissot-1-logo-png-transparent_1.png"
   },
   {
     name: "Casio",
     history: "Founded in Japan in 1946, Casio revolutionized digital watch technology.",
-    brandImage: "img/brand/casio-brand.jpg"
+    brandImage: "img/logo/casio-logo-svg-vector.svg"
   },
   {
     name: "Citizen",
     history: "Citizen was founded in Japan in 1918 and popularized solar-powered watches with its Eco-Drive technology.",
-    brandImage: "img/brand/citizen-brand.jpg"
+    brandImage: "img/logo/citizen_watch-brandlogo.net_-512x512.png"
   },
   {
     name: "Audemars Piguet",
     history: "Founded in 1875, AP became iconic with the Royal Oak series. It stands out with highly complicated mechanisms and luxurious designs.",
-    brandImage: "img/brand/ap-logo.png"
+    brandImage: "img/logo/audemars-piguet-logo-png-transparent.png"
   },
   {
     name: "Patek Philippe",
     history: "Producing luxury watches in Switzerland since 1839, Patek Philippe is known for its highly complicated mechanical watches. The Nautilus and Calatrava collections are symbols of prestige.",
-    brandImage: "img/brand/pp-logo.png"
+    brandImage: "img/logo/patek-philippe-logo-png-transparent.png"
   },
   {
     name: "Rolex",
     history: "Founded in 1905, Rolex is the symbol of luxury automatic watches. Iconic models like the Submariner and Daytona offer durability and prestige.",
-    brandImage: "img/brand/rolex-logo.png"
+    brandImage: "img/logo/rolex-1-logo-png-transparent.png"
   },
   {
     name: "Omega",
     history: "Operating in Switzerland since 1848, Omega is famous for the Speedmaster and Seamaster. It produces high-precision mechanical and quartz watches.",
-    brandImage: "img/brand/omega-logo.png"
+    brandImage: "img/logo/images.png"
   },
   {
     name: "Orient",
     history: "Founded in Japan in the 1950s, Orient offers durable and affordable mechanical watches. Classic designs like the Bambino are popular.",
-    brandImage: "img/brand/orient-logo.png"
+    brandImage: "img/logo/images_1.png"
   },
   {
     name: "Longines",
     history: "Founded in Switzerland in 1832, Longines is known for its elegant and precise watches. The Elegance and Heritage series offer both classic and sporty styles.",
-    brandImage: "img/brand/longines-logo.png"
+    brandImage: "img/logo/longines-1-logo-png-transparent.png"
   },
   {
     name: "Hamilton",
     history: "Founded in 1892, Hamilton produces affordable mechanical and automatic watches. Its retro and classic designs are frequently used in the film industry.",
-    brandImage: "img/brand/hamilton-logo.png"
+    brandImage: "img/logo/hamilton-1-logo-svg-vector.svg"
   },
   {
     name: "TAG Heuer",
     history: "Founded in 1860, TAG Heuer is synonymous with motorsports. It is a leader in chronograph watches, especially with the Carrera and Monaco series.",
-    brandImage: "img/brand/tagheuer-logo.png"
+    brandImage: "img/logo/tag-heuer-2-logo-png-transparent.png"
   }
 ];
 
@@ -360,4 +360,4 @@ const watches = [
     id: "th3", brand: "TAG Heuer", model: "Aquaracer Professional 300", movement: "Automatic", diameter: "43mm", waterResistance: "300m", weight: "175g", price: "3500€", image: "img/tagheuer/aquaracer.png",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "38 hours", lug_width: "22mm", is_chronograph: "No", thickness: "12mm", movement_calibre: "Calibre 5 (ETA 2824 tabanlı)", jewels: "25", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Diver (Unidirectional)"
   }
-];
+]; 
