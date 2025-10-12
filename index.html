@@ -11,7 +11,9 @@
     <h1>Watch Compare</h1>
     <nav>
       <a href="index.html" class="active">Home</a>
-      <a href="compare.html">Compare</a>
+      <a href="compare.html">Multi-Compare</a> 
+      <a href="search.html">Search</a> 
+      <a href="matches.html">Matches</a> 
       <a href="about.html">About</a>
       <a href="contact.html">Contact Us</a> 
     </nav>
@@ -22,7 +24,12 @@
       <h2>Discover Your Perfect Watch. Compare. Decide.</h2>
       <p class="tagline">Luxury, Sport, Vintage, or Casual... Instantly compare dozens of popular watches based on their technical specifications, prices, and design.</p>
       
-      <a href="compare.html" class="cta-button">Start Comparing Now</a>
+      <div class="cta-buttons-container">
+          <a href="compare.html" class="cta-button">Multi-Compare (Up to 4)</a> 
+          <a href="matches.html" class="cta-button secondary-cta">View Best Matches</a> 
+          <a href="search.html" class="cta-button tertiary-cta">Search One Watch</a> 
+      </div>
+      
     </section>
 
     <section class="feature-section">
@@ -42,10 +49,25 @@
             </div>
         </div>
     </section>
+    
+    <section class="page-section random-brand-section">
+        <h2>Brand Spotlight</h2>
+        <div class="brand-display">
+            <div id="brandImageContainer">
+                </div>
+            <div class="brand-details">
+                <h3 id="brandName">Loading Brand...</h3>
+                <p id="brandHistory">Discover the history behind the world's greatest watchmakers.</p>
+            </div>
+        </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 WatchCompare prepared by Aras Tokdemir with <a href="https://cizgifikrim.net" target="_blank">CizgiFikrim</a> company</p>
   </footer>
+  
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
