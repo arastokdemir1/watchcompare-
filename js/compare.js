@@ -1,40 +1,35 @@
 // js/compare.js
+// Bu script, compare.html sayfasındaki 4 adet saat seçicisini yönetir,
+// markaya göre gruplama yapar ve seçilen saatler için detaylı bir tablo oluşturur.
 
-// DOM Elements
-const boxes = document.querySelectorAll(".compare-box button");
-const popup = document.getElementById("searchPopup");
-const closePopup = document.getElementById("closePopup");
-const searchInput = document.getElementById("watchSearch");
-const searchResults = document.getElementById("searchResults");
-const compareTable = document.getElementById("compareTable");
-const tableBody = document.querySelector("#compareTable tbody");
-const tableHead = document.querySelector("#compareTable thead");
+// data.js'den gelen düz "watches" dizisini, markaya göre gruplandırılmış hiyerarşik bir objeye dönüştürür.
+const saatVerileri = watches.reduce((acc, saat) => {
+    const marka = saat.brand;
+    if (!acc[marka]) {
+        acc[marka] = [];
+    }
+    acc[marka].push(saat);
+    return acc;
+}, {});
 
-// State Variables
-let selectedWatches = [null, null, null, null]; // Compared watches
-let activeBoxElement = null; // The clicked comparison box
-
-// We assume that the 'watches' array from data.js is defined in this file.
-
-// --- TABLE FEATURES (ENGLISH CONSTANT TEXTS) ---
-// This object defines which watch features the table will display, in what order, and their English labels.
+// Karşılaştırma tablosunda gösterilecek özellikler ve İNGİLİZCE etiketleri
 const features = {
-    // BASIC FEATURES
+    // TEMEL ÖZELLİKLER
     'brand': 'Brand',
     'model': 'Model',
-    'price': 'Price (€)',
+    'price': 'Price (€)', 
     'diameter': 'Case Diameter',
     'thickness': 'Case Thickness',
     'weight': 'Weight',
 
-    // MOVEMENT AND TECHNICAL SPECIFICATIONS
+    // MEKANİZMA VE TEKNİK ÖZELLİKLER
     'movement': 'Movement Type',
-    'movement_calibre': 'Movement Calibre',
+    'movement_calibre': 'Movement Caliber',
     'power_reserve': 'Power Reserve',
     'frequency_vph': 'Frequency (vph)',
     'jewels': 'Jewels',
     
-    // CASE AND STRUCTURE FEATURES
+    // KASA VE YAPI ÖZELLİKLERİ
     'case_material': 'Case Material',
     'crystal_type': 'Crystal Type',
     'waterResistance': 'Water Resistance',
@@ -42,206 +37,219 @@ const features = {
     'lug_width': 'Lug Width',
     'strap_material': 'Strap Material',
     
-    // FUNCTIONS
+    // FONKSİYONLAR
     'is_chronograph': 'Chronograph',
     'has_date': 'Date Window',
     'bezel_function': 'Bezel Function',
 };
 
 
-// --- EVENT LISTENERS ---
+// --- DOM ELEMENTLERİ ve STATE (4 Kutu için Genişletildi) ---
 
-// 1. Click on + Button (Open Popup)
-boxes.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        // Save the clicked box
-        activeBoxElement = e.target.closest(".compare-box");
+// compare.html'deki yeni ID'leri yakalar (1'den 4'e kadar)
+const panels = [null];
+const markaListeleri = [null];
+const modelListeleri = [null];
+const selectBtns = [null];
+
+for (let i = 1; i <= 4; i++) {
+    panels.push(document.getElementById(`dropdown-panel-${i}`));
+    markaListeleri.push(document.getElementById(`marka-listesi-${i}`));
+    modelListeleri.push(document.getElementById(`model-listesi-${i}`));
+    selectBtns.push(document.getElementById(`select-watch-${i}-btn`));
+}
+
+const resultsContainer = document.getElementById('compare-results');
+const initialMessage = document.getElementById('initial-message');
+
+// Seçilen saatlerin tam saat objesini tutar: [null, saat1, saat2, saat3, saat4]
+let secilenSaatler = [null, null, null, null, null]; 
+
+
+// --- TEMEL İŞLEVLER ---
+
+// 1. Markaları Yükleme (Butona basıldığında açılan ilk liste)
+function markalariYukle(panelIndex) {
+    const listContainer = markaListeleri[panelIndex];
+    if (!listContainer) return;
+
+    listContainer.innerHTML = ''; 
+    modelListeleri[panelIndex].style.display = 'none'; 
+    listContainer.style.display = 'block'; 
+
+    Object.keys(saatVerileri).sort().forEach(marka => {
+        const markaDiv = document.createElement('div');
+        markaDiv.className = 'marka-item';
+        markaDiv.textContent = marka;
         
-        // Show the popup
-        popup.style.display = "flex";
-        popup.classList.add("show");
+        // Markaya tıklayınca modelleri göster
+        markaDiv.onclick = () => modelleriGoster(marka, panelIndex);
         
-        // Clear and focus the search field
-        searchInput.value = "";
-        searchResults.innerHTML = "";
-        searchInput.focus();
-        
-        // List all watches when the popup opens
-        renderSearchResults(watches);
+        listContainer.appendChild(markaDiv);
     });
-});
+}
 
-// 2. Close Popup
-closePopup.addEventListener("click", () => {
-    popup.classList.remove("show");
-    // Hide after animation
-    setTimeout(() => (popup.style.display = "none"), 300);
-});
-
-// 3. Search Box Input (Filter Watches)
-searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase().trim();
-    if (query.length > 1) {
-        // Filter watches containing Model or Brand
-        const filtered = watches.filter(w => 
-            w.model.toLowerCase().includes(query) || 
-            w.brand.toLowerCase().includes(query)
-        );
-        renderSearchResults(filtered);
-    } else {
-        // Show all watches if search is empty
-        renderSearchResults(watches);
-    }
-});
-
-
-// --- FUNCTIONS ---
-
-// Function to list search results
-function renderSearchResults(results) {
-    searchResults.innerHTML = "";
-
-    if (results.length === 0) {
-        const noResult = document.createElement("div");
-        noResult.className = "search-item no-result";
-        // Text set to English
-        noResult.textContent = 'No results found.'; 
-        searchResults.appendChild(noResult);
-        return;
-    }
+// 2. Modelleri Gösterme (Marka tıklandığında açılan model listesi)
+function modelleriGoster(marka, panelIndex) {
+    const modelContainer = modelListeleri[panelIndex];
     
-    results.forEach(watch => {
-        const item = document.createElement("div");
-        item.className = "search-item";
-        item.innerHTML = `
-            <img src="${watch.image}" alt="${watch.model}" class="search-img">
-            <div class="search-info">
-                <strong>${watch.brand}</strong>
-                <span>${watch.model}</span>
-                <small>${watch.price}</small>
-            </div>
+    modelContainer.innerHTML = '';
+    
+    // Geri dönme butonu/başlığı
+    const baslik = document.createElement('div');
+    baslik.className = 'marka-item';
+    baslik.textContent = `< ${marka} (Back to Brands)`; // İngilizce metin
+    baslik.style.fontWeight = 'bold';
+    baslik.onclick = () => markalariYukle(panelIndex); // Marka listesine geri dön
+    modelContainer.appendChild(baslik);
+    
+    // Modelleri listele (Alfabetik sıralama)
+    saatVerileri[marka].sort((a, b) => a.model.localeCompare(b.model)).forEach(saat => {
+        const modelDiv = document.createElement('div');
+        modelDiv.className = 'model-item';
+        modelDiv.innerHTML = `
+            <img src="${saat.image}" alt="${saat.model}" style="float:left; margin-right: 10px; height:35px; border-radius:3px;">
+            <span style="display: block;">${saat.model}</span>
+            <small style="display: block; color: #888;">${saat.price}</small>
         `;
         
-        // Watch click event
-        item.addEventListener("click", () => {
-            addWatchToCompare(watch);
-            popup.classList.remove("show");
-            setTimeout(() => (popup.style.display = "none"), 300);
-        });
-        searchResults.appendChild(item);
-    });
-}
-
-// Function that adds the selected watch to the comparison slot
-function addWatchToCompare(watch) {
-    // Find the array index by subtracting 1 from data-index
-    const index = parseInt(activeBoxElement.dataset.index) - 1;
-    selectedWatches[index] = watch;
-    updateCompareBoxes();
-    updateCompareTable();
-}
-
-// Function to update the comparison boxes
-function updateCompareBoxes() {
-    selectedWatches.forEach((watch, index) => {
-        const box = document.querySelector(`.compare-box[data-index="${index + 1}"]`);
+        // Model seçimi yapıldığında
+        modelDiv.onclick = () => saatSec(saat, panelIndex);
         
-        if (watch) {
-            // Card view if watch is added
-            box.innerHTML = `
-                <div class="watch-card" data-id="${watch.id}">
-                    <img src="${watch.image}" alt="${watch.model}" class="card-img">
-                    <button class="remove-btn" data-index="${index}">✕</button>
-                    <p class="card-brand">${watch.brand}</p>
-                    <p class="card-model">${watch.model}</p>
-                </div>
-            `;
-            // Add event listener for the remove button
-            box.querySelector('.remove-btn').addEventListener('click', removeWatch);
-        } else {
-            // + button if watch is not added
-            box.innerHTML = `<button>+</button>`;
-            // Re-add event listener for the + button
-            box.querySelector('button').addEventListener("click", (e) => {
-                 activeBoxElement = e.target.closest(".compare-box");
-                 popup.style.display = "flex";
-                 popup.classList.add("show");
-                 searchInput.value = "";
-                 searchResults.innerHTML = "";
-                 searchInput.focus();
-                 renderSearchResults(watches); // List all watches when opening the new popup
-            });
+        modelContainer.appendChild(modelDiv);
+    });
+    
+    // Görünümü değiştir
+    markaListeleri[panelIndex].style.display = 'none';
+    modelContainer.style.display = 'block';
+}
+
+// 3. Saat Seçimi ve Kapanma (MODEL TIKLANDIĞINDA KUTUYU GÜNCELLEYEN FONKSİYON - GÖRSEL EKLENDİ)
+function saatSec(saatObjesi, panelIndex) {
+    const selectBtn = selectBtns[panelIndex];
+    const panel = panels[panelIndex];
+
+    // Butonun yeni içeriği: Resim, Marka ve Model (Ekran görüntüsüne uygun)
+    selectBtn.innerHTML = `
+        <img src="${saatObjesi.image}" alt="${saatObjesi.brand} ${saatObjesi.model}">
+        <span style="font-size:16px;">${saatObjesi.brand}</span>
+        <span style="font-size:14px; display:block; font-weight: normal;">${saatObjesi.model}</span>
+    `;
+    selectBtn.classList.add('selected'); 
+    
+    // Seçimi kaydet
+    secilenSaatler[panelIndex] = saatObjesi;
+    
+    // Paneli kapat
+    panel.style.display = 'none';
+    
+    // Karşılaştırmayı kontrol et
+    karsilastirmaKontrol();
+}
+
+// 4. Açılır/Kapanır İşlevi (Toggle)
+function panelToggle(panelIndex) {
+    const panel = panels[panelIndex];
+    
+    // Diğer panelleri kapat
+    for (let i = 1; i <= 4; i++) {
+        if (i !== panelIndex) {
+            panels[i].style.display = 'none';
         }
-    });
-}
-
-// Function to remove the watch from the list
-function removeWatch(e) {
-    e.stopPropagation();
-    const index = parseInt(e.target.dataset.index);
-    selectedWatches[index] = null;
-    updateCompareBoxes();
-    updateCompareTable();
-}
-
-// Main function to update the comparison table
-function updateCompareTable() {
-    const filledWatches = selectedWatches.filter(w => w !== null);
-    
-    // 1. Set the table visibility
-    if (filledWatches.length === 0) {
-        compareTable.style.display = 'none';
-        return;
     }
-    compareTable.style.display = 'table';
-    
-    // 2. Update the table header (Watch Models)
-    let headerRow = '<tr><th></th>'; 
-    filledWatches.forEach(watch => {
-        // Create a header cell for each watch
-        headerRow += `<th>
-            <img src="${watch.image}" alt="${watch.model}" class="table-img">
-            <p>${watch.brand} ${watch.model}</p>
-        </th>`;
-    });
-    headerRow += '</tr>';
-    tableHead.innerHTML = headerRow;
 
-    // 3. Update the table body (Features)
-    tableBody.innerHTML = '';
+    // Mevcut paneli aç/kapat
+    panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
     
-    // Create a row for each feature in the features object
+    // Açıldığında markaları yükle
+    if (panel.style.display === 'block') {
+        markalariYukle(panelIndex);
+    }
+}
+
+// 5. Karşılaştırma Sonuçlarını Yönetme (4 Saate Göre Tablo)
+function karsilastirmaKontrol() {
+    // Dizideki 1, 2, 3 ve 4. indeksleri alır ve boş (null) olanları filtreler
+    const filledWatches = [secilenSaatler[1], secilenSaatler[2], secilenSaatler[3], secilenSaatler[4]].filter(s => s !== null);
+
+    // İlk saat eklendiğinde özellikleri göster
+    if (filledWatches.length < 1) { // Burası değiştirildi: < 2 yerine < 1
+        initialMessage.style.display = 'block';
+        resultsContainer.innerHTML = '';
+        
+        // Resetleme: Seçilmemiş butonları '+' işaretine geri çevir.
+        for(let i = 1; i <= 4; i++){
+            if (secilenSaatler[i] === null) {
+                selectBtns[i].innerHTML = '+'; 
+                selectBtns[i].classList.remove('selected');
+            }
+        }
+        return;
+    } 
+
+    initialMessage.style.display = 'none';
+    
+    // Tablo başlığını oluşturma
+    let tableHTML = `
+        <table id="compareTable" border="1" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Feature</th> `;
+    filledWatches.forEach(watch => {
+        tableHTML += `
+            <th>
+                <img src="${watch.image}" alt="${watch.model}" style="height: 50px; display: block; margin: 5px auto;">
+                <p><strong>${watch.brand}</strong></p>
+                <p>${watch.model}</p>
+            </th>
+        `;
+    });
+    tableHTML += '</tr></thead><tbody>';
+
+    // Tablo gövdesini oluşturma (Özellikler)
     for (const key in features) {
-        // Skip the row if none of the watches have this feature or if it's empty/null
-        if (filledWatches.every(w => !w.hasOwnProperty(key) || !w[key])) { 
+        // Bu özelliğe sahip olmayan veya boş olan saatler varsa atla
+        if (filledWatches.every(w => !w.hasOwnProperty(key) || w[key] === null || w[key] === '' || typeof w[key] === 'undefined')) { 
             continue; 
         }
 
         let row = '<tr>';
-        // First cell: Feature name (Directly the English text from the features object)
         const featureName = features[key]; 
-        row += `<td class="feature-name">${featureName}</td>`; 
+        row += `<td class="feature-name" style="font-weight:bold;">${featureName}</td>`; 
 
-        // Subsequent cells: Feature values for the watches
         filledWatches.forEach(watch => {
-            // Show "-" if the value is missing or empty
-            const value = watch[key] || '-'; 
+            // Değer yoksa "-" göster. Boolean değerleri (is_chronograph gibi) Yes/No olarak göster.
+            let value = watch[key]; 
+            if (value === true) value = 'Yes'; // İngilizce
+            else if (value === false) value = 'No'; // İngilizce
+            else if (value === null || value === '' || typeof value === 'undefined') value = '-';
+            
             row += `<td>${value}</td>`;
         });
         
         row += '</tr>';
-        tableBody.innerHTML += row;
+        tableHTML += row;
     }
-}
-
-// Function to be executed at startup
-function initComparePage() {
-    // Language-related event listeners and initial settings were removed.
     
-    // Prepare the boxes and table on initial load
-    updateCompareBoxes();
-    updateCompareTable(); 
+    tableHTML += '</tbody></table>';
+    resultsContainer.innerHTML = tableHTML;
 }
 
-// Start when the page loads
-window.addEventListener("DOMContentLoaded", initComparePage);
+
+// --- BAŞLANGIÇ VE OLAY DİNLEYİCİLERİ ---
+
+function initComparePage() {
+    // Butonlara açılır/kapanır işlevini ekle (1'den 4'e kadar)
+    for (let i = 1; i <= 4; i++) {
+        if (selectBtns[i]) {
+            selectBtns[i].onclick = () => panelToggle(i);
+            selectBtns[i].innerHTML = '+';
+        }
+    }
+    // Sayfa yüklendiğinde de bir kere karşılaştırma kontrolü yapalım
+    // Eğer linkten gelinirse veya sayfa yenilenirse, seçilen saatler varsa tablo oluşur.
+    karsilastirmaKontrol(); 
+}
+
+// Sayfa yüklendiğinde başlat
+window.addEventListener('DOMContentLoaded', initComparePage);
