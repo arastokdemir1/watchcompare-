@@ -525,10 +525,10 @@ main {
 /* Hero Section */
 .hero-section {
     text-align: center;
-    padding: 60px 20px;
+    padding: 60px 100px;
     background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
     border-radius: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .hero-section h2 {
@@ -947,4 +947,18 @@ footer a:hover {
         text-align: center !important;
         background-color: #f0f0f0;
     }
+}
+/* Marka logosu ve detaylarının geçişi için CSS */
+.brand-display * {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#brandImageContainer img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0; /* Başlangıçta gizli */
+}
+
+#brandImageContainer img.fade-in {
+    opacity: 1; /* Görünür */
 }
