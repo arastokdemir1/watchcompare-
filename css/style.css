@@ -705,6 +705,11 @@ footer a:hover {
     justify-content: center; 
     gap: 20px;
     padding: 50px 20px;
+    flex-wrap: nowrap; 
+    
+    /* 2. ÖNEMLİ DÜZELTME: Kutuların toplam genişliğini kapsayacak minimum genişlik */
+    /* 4 kutu * 250px (genişlik) + 3 boşluk * 25px = 1075px civarı */
+    min-width: 1080px; 
 }
 
 /* Tekil Saat Kutusu Stili */
