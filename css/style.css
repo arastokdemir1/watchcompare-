@@ -52,6 +52,8 @@ main {
   align-items: center;
   padding: 20px 0;
   width: 100%;
+  /* Mobil Bozulma Düzeltmesi (Genel Taşmayı Engelle) */
+  overflow-x: hidden; 
 }
 
 /* Sayfa bölümleri (Genel kapsayıcı) */
@@ -447,7 +449,8 @@ footer a:hover {
     .watch-card img {
         margin: 0 auto 10px;
     }
-}/* Genel sıfırlama */
+}
+/* Genel sıfırlama */
 * {
   margin: 0;
   padding: 0;
@@ -909,10 +912,17 @@ footer a:hover {
     header h1 {
         font-size: 1.5rem;
     }
+    /* Navigasyonu mobil için iyileştir */
+    nav { 
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
     nav a {
-        margin: 0 8px;
+        margin: 5px 8px; /* Dikey boşluk ekle */
         font-size: 0.9rem;
     }
+
     .hero-section h2 {
         font-size: 1.8rem;
     }
@@ -931,21 +941,47 @@ footer a:hover {
         text-align: center;
     }
     
-    #compare-results table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    #compare-results thead, #compare-results tbody, #compare-results th, #compare-results td, #compare-results tr {
-        display: block;
-    }
-    #compare-results th:not(:first-child), #compare-results td:not(:first-child) {
-        width: 50%; 
-    }
-    #compare-results th:first-child, #compare-results td:first-child {
+    /* KARŞILAŞTIRMA TABLOSU DÜZELTMESİ: Yatay Kaydırma */
+    
+    /* Kapsayıcıya yatay kaydırma özelliği verin */
+    #compare-results {
         width: 100%;
-        text-align: center !important;
-        background-color: #f0f0f0;
+        overflow-x: auto; /* Yatay kaydırmayı etkinleştir */
+    }
+    
+    /* Tablonun kaydırma çubuğunu tetiklemesi için minimum genişlik verin */
+    #compare-results table {
+        min-width: 650px; /* Mobil ekran genişliğinden fazla bir değer */
+        width: auto; 
+    }
+    
+    /* Hücrelerin genişliklerini ve metin sarımını ayarlayın */
+    #compare-results thead th, 
+    #compare-results tbody td {
+        min-width: 120px; /* Her sütuna minimum genişlik ver */
+        padding: 8px 10px;
+        white-space: normal; /* Metin sarımını etkinleştir */
+        display: table-cell; /* Önceki bozuk display: block kuralını ezdik */
+    }
+
+    /* İlk sütun (Özellik Adı) daha geniş olsun */
+    #compare-results tbody td:first-child,
+    #compare-results thead th:first-child {
+        min-width: 150px;
+        text-align: left !important;
+    }
+    
+    /* Önceki bozuk kart görünümü kurallarını devre dışı bırakıyoruz: */
+    #compare-results thead, #compare-results tbody, #compare-results th, #compare-results td, #compare-results tr {
+        display: contents; /* Tablonun varsayılan görünümünü koru (Mobil bozulmayı giderir) */
+    }
+    /* ... (Diğer bozuk kurallar silindi) ... */
+    
+    .watch-card {
+        flex-direction: column;
+    }
+    .watch-card img {
+        margin: 0 auto 10px;
     }
 }
 /* Marka logosu ve detaylarının geçişi için CSS */
@@ -962,21 +998,7 @@ footer a:hover {
 #brandImageContainer img.fade-in {
     opacity: 1; /* Görünür */
 }
-/* Marka logosu ve detaylarının geçişi için CSS */
-/* Yeni eklenen kodları mevcut style.css dosyanızın sonuna yapıştırın. */
-.brand-display * {
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
 
-#brandImageContainer img {
-    max-width: 100%;
-    height: auto;
-    opacity: 0; /* Başlangıçta gizli */
-}
-
-#brandImageContainer img.fade-in {
-    opacity: 1; /* Görünür */
-}
 /* ==================================== */
 /* CREDITS.HTML Stilleri (YENİ)         */
 /* ==================================== */
