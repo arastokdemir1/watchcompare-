@@ -716,3 +716,131 @@ main {
 .compare-box.selected .remove-btn {
     display: flex; 
 }
+/* ==================================== */
+/* 1. SEÇİLİ KUTU VE GİZLENEN METİN KESİNLEŞTİRMESİ */
+/* ==================================== */
+
+/* Model adının tamamen gizlenmesini garanti eder */
+.watch-info {
+    /* Daha önce eklenmişti ama tekrarlıyoruz: */
+    display: none !important; /* KESİN: Metni tamamen gizle */
+}
+
+/* Kutu seçiliyken watch-info'nun içindeki her şeyi de gizle (ek güvenlik) */
+.compare-box.selected .watch-info * {
+    display: none !important;
+}
+
+/* ==================================== */
+/* 2. ABOUT.HTML VE CONTACT.HTML İÇİN EKLENTİLER */
+/* ==================================== */
+
+/* ABOUT.HTML - Genel Düzen */
+.about-page h2, .contact-page-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.about-page h3 {
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.about-page ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-page ul li {
+    background-color: var(--background-dark);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.about-page ul li strong {
+    color: var(--primary-color);
+}
+
+.developer-info {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #e9ecef; /* Hafif bir arka plan */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.developer-info h4 {
+    color: #212529;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+
+/* CONTACT.HTML - İletişim Formu Stilleri */
+.contact-details {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-dark);
+}
+
+.contact-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.contact-form-container h3 {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Mobil uyum için düzeltmeler */
+@media (max-width: 768px) {
+    .about-page, .contact-page-section {
+        padding: 20px;
+    }
+    
+    .about-page h2, .contact-page-section h2 {
+        font-size: 1.5rem;
+    }
+}
