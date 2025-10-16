@@ -1095,30 +1095,24 @@ main {
         height: 180px;
     }
 }
-/* style.css içinde: COMPARE KUTULARI VE İÇERİKLERİ STİLLERİ bölümünde */
+/* MOBİLDEKİ SAAT EKLEME GÖRSEL SORUNU İÇİN DÜZELTME */
 
-.compare-box .watch-image {
-    /* Görselin maksimum genişliği, kutunun tamamını kaplamasını engeller */
-    max-width: 80%; 
-    
-    /* KRİTİK: Görselin kutu yüksekliğine göre SÜREKLİ SINIRLANMASINI sağlar */
-    max-height: 100px; /* Bu değeri 100px veya 120px gibi bir değerle deneyin */
-    
-    /* En boy oranını koruyarak kutuya sığmasını sağlar */
-    object-fit: contain; 
-    
-    margin: 5px auto;
-    transition: all 0.3s;
-    
-    /* Mobil düzende esneme önceliği vermiyoruz, boyutunu korumalı */
-    flex-shrink: 0; 
-}
-
-/* Seçili kutunun flex konteynerini de kontrol edelim */
 .compare-box.selected {
+    /* İçeriğin taşmasını engellemek ve düzgün hizalamak için */
     display: flex;
     flex-direction: column;
-    justify-content: space-around; /* İçeriği dikeyde eşit yay */
-    padding: 10px; 
-    height: 100%; 
+    justify-content: flex-start; /* İçeriği üstten başlat */
+    align-items: center;
+    padding: 10px;
+    overflow: hidden; /* En önemlisi: Kutu dışına taşan her şeyi gizle */
+}
+
+.compare-box.selected img {
+    /* Resmin kutuya doğru şekilde sığmasını sağlayan kurallar */
+    display: block;
+    max-width: 100%;         /* Resim, kutu genişliğini asla geçemez */
+    max-height: 90px;        /* Resmin dikeyde çok yer kaplamasını önler */
+    width: auto;             /* En-boy oranını korur */
+    object-fit: contain;     /* Görüntüyü bozmadan alana sığdırır */
+    margin-bottom: 10px;     /* Resim ile alttaki yazı arasına boşluk koyar */
 }
