@@ -1,4 +1,23 @@
 /* Genel sıfırlama */
+:root {
+    --primary-color: #007bff;      /* Canlı Mavi Vurgu */
+    --secondary-color: #6c757d;    /* Gri İkincil Vurgu */
+    --background-dark: #f8f9fa;    /* Ana Arka Plan (Açık Gri) */
+    --background-light: #ffffff;   /* Paneller ve Kartlar (BEYAZ) */
+    --text-color: #343a40;         /* Koyu Gri Yazı Rengi */
+    --text-secondary: #212529;     /* Daha Koyu Metin */
+    --border-color: #ced4da;       /* Açık Gri Sınır Rengi */
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Hafif Gölge */
+    --shadow-dark: rgba(0, 0, 0, 0.2);  /* Daha Koyu Gölge */
+    
+    /* Panel Renkleri (Artık genel temayla aynı ama değişkenler duruyor) */
+    --panel-bg: var(--background-light);          
+    --panel-card-bg: var(--background-dark);      
+    --panel-text-color: var(--text-color);       
+    --panel-border: var(--border-color);      
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +25,10 @@
 }
 
 /* Genel sayfa düzeni */
+/* Genel sayfa düzeni */
 html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  color: #222;
+  min-height: 100%; /* Yükseklik zorlamasını kaldırın */
+  display: block; /* Normal akışa dönün */
 }
 
 /* Header (Başlık ve Navigasyon) */
@@ -295,161 +311,6 @@ footer a:hover {
 .feedback-form textarea {
     resize: vertical;
 }
-
-/* ==================================== */
-/* SEARCH.HTML Stilleri (YENİ)          */
-/* ==================================== */
-
-.search-page {
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-#single-search-input {
-    width: 100%;
-    padding: 15px 20px;
-    font-size: 1.2em;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
-    margin-bottom: 20px;
-}
-#single-search-input:focus {
-    border-color: #007bff;
-}
-
-#search-results-area {
-    margin-top: 20px;
-}
-
-.watch-card {
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    flex-wrap: wrap;
-}
-
-.watch-card img {
-    max-width: 150px;
-    height: auto;
-    border-radius: 5px;
-    object-fit: contain;
-}
-
-.watch-details {
-    flex: 1;
-    min-width: 250px;
-}
-.watch-details h3 {
-    margin-top: 0;
-    font-size: 1.6em;
-}
-.watch-details table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-.watch-details th, .watch-details td {
-    padding: 8px 10px;
-    text-align: left;
-    border-bottom: 1px solid #f0f0f0;
-}
-.watch-details th {
-    background-color: #f8f8f8;
-    font-weight: bold;
-    width: 35%;
-}
-
-/* ==================================== */
-/* MATCHES.HTML Stilleri (YENİ)         */
-/* ==================================== */
-
-.matches-page {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
-
-.match-pair {
-    background: white;
-    margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.match-pair h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #007bff;
-    font-size: 1.6em;
-}
-
-.match-table-container {
-    overflow-x: auto;
-}
-
-.match-table {
-    width: 100%;
-    min-width: 600px; 
-    border-collapse: collapse;
-}
-
-.match-table th, .match-table td {
-    padding: 12px 15px;
-    border: 1px solid #eee;
-    text-align: center;
-}
-.match-table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
-}
-.match-table td:first-child {
-    text-align: left;
-    font-weight: bold;
-    width: 30%;
-    background-color: #fcfcfc;
-}
-
-.match-table img {
-    max-width: 70px;
-    height: auto;
-    display: block;
-    margin: 0 auto 5px;
-}
-
-/* Responsive Düzenlemeler */
-@media (max-width: 768px) {
-    .cta-buttons-container {
-        flex-direction: column;
-    }
-    .feature-list {
-        flex-direction: column;
-        align-items: center;
-    }
-    .brand-display {
-        flex-direction: column;
-    }
-    .brand-details {
-        text-align: center;
-    }
-    .watch-card {
-        flex-direction: column;
-    }
-    .watch-card img {
-        margin: 0 auto 10px;
-    }
-}
 /* Genel sıfırlama */
 * {
   margin: 0;
@@ -701,198 +562,253 @@ footer a:hover {
 
 /* Genel Konteyner için 4 Kutuyu Saran Bölüm */
 #compare-boxes-container {
-    display: flex;
-    justify-content: center; 
+    position: relative; 
+    display: flex; 
+    justify-content: center;
     gap: 20px;
-    padding: 50px 20px;
-    flex-wrap: nowrap; 
-    
-    /* 2. ÖNEMLİ DÜZELTME: Kutuların toplam genişliğini kapsayacak minimum genişlik */
-    /* 4 kutu * 250px (genişlik) + 3 boşluk * 25px = 1075px civarı */
-    min-width: 1080px; 
+    margin-bottom: 40px;
 }
 
 /* Tekil Saat Kutusu Stili */
 .compare-box {
-    position: relative; 
-    width: 220px; 
-    height: 220px; 
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: white;
+    width: 250px;
+    height: 150px;
+    background-color: var(--background-dark); /* Açık tema için daha koyu bir arka plan */
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.compare-box:hover {
+    border-color: var(--primary-color);
+}
+
+.select-btn {
+    background: none;
+    color: var(--primary-color);
+    border: none;
+    font-size: 2em;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+/* Seçilmiş Durum */
+.compare-box.selected {
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--primary-color);
+    cursor: default;
+}
+
+.compare-box.selected::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Açık temada resmi daha görünür yapmak için hafif beyazlama */
+    background: rgba(255, 255, 255, 0.4); 
+    z-index: 1;
+}
+
+.watch-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Yarı saydam beyaz */
+    z-index: 2;
     text-align: center;
-    padding: 10px; 
-    transition: box-shadow 0.2s, transform 0.1s; /* Efekt için geçişler */
+    color: var(--text-secondary); /* Koyu yazı rengi */
+}
+.watch-info h4 {
+    margin: 0;
+    color: var(--primary-color);
+}
+.watch-info p {
+    margin: 0;
+    font-size: 0.9em;
 }
 
-/* Efekt (a) - Kutu üzerine gelme ve aktif/seçili olma durumu */
-.compare-box:hover { 
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Hafifçe vurgula */
-}
-.compare-box.selected, .compare-box.active {
-    box-shadow: 0 0 0 3px #007bff; /* Aktif/Seçili olduğunda mavi çerçeve */
-}
-.compare-box:not(.selected):active {
-    transform: scale(0.98); /* Tıklama efekti */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-}
-
-/* Saati Kaldırma Butonu (X) Stili */
 .remove-btn {
     position: absolute;
-    top: -10px; /* Kutunun biraz dışına taşıdık */
-    right: -10px;
-    background-color: #ff4d4d;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545; 
     color: white;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
     cursor: pointer;
-    opacity: 0; /* Başlangıçta gizle */
-    transition: opacity 0.3s, background-color 0.2s, transform 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: bold;
+    z-index: 3;
+    display: none; 
 }
 .compare-box.selected .remove-btn {
-    opacity: 1; /* Saat seçilince göster */
-}
-.remove-btn:hover {
-    background-color: #cc0000;
-    transform: scale(1.1);
-}
-
-/* '+' Buton Stili (Seçilmeden önceki hali) */
-.select-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 50px; 
-    color: #ccc;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    transition: color 0.2s;
-    line-height: 1.3;
-    text-decoration: none;
-}
-.select-btn:hover {
-    color: #aaa;
-}
-
-/* Seçim Yapıldıktan Sonraki Buton/Kutu İçeriği Stili */
-.select-btn.selected {
-     color: #333;
-     font-size: 16px;
-     font-weight: bold;
-     line-height: 1.3;
-}
-
-/* Seçilen Saatin Görseli İçin Stil */
-.select-btn.selected img {
-    max-width: 90%; 
-    max-height: 100px; 
     display: block;
-    margin: 0 auto 10px auto; 
-    border-radius: 5px;
-    object-fit: contain; 
-    pointer-events: none;
 }
 
-/* Modal için Arka Plan Karartma (Overlay) Stili */
+
+/* 1. OVERLAY (Karartma Katmanı) */
 .dropdown-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Hafifçe daha koyu, belirgin */
-    z-index: 1000; /* Overlay için sabit değer */
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 99; 
     display: none;
 }
+.dropdown-overlay.active {
+    display: block;
+}
 
-/* Açılır Panel (Dropdown) Stili - Sayfa Ortasına Getirme */
+/* 2. PANEL (Marka/Model Seçim Kutusu) - AÇIK TEMA */
 .dropdown-panel {
     position: fixed; 
-    top: 50%; 
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
+    z-index: 100; 
     width: 90%;
-    max-width: 500px; 
-    height: 80%; 
-    max-height: 600px;
-    border: 1px solid #ccc;
-    overflow: hidden; 
-    background: white;
-    z-index: 1001; /* Overlay'den 1 puan yüksek, modalın en üstte olmasını garantiler */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    display: none; 
+    max-width: 480px; 
+    
+    background-color: var(--panel-bg); 
+    opacity: 1; 
+    color: var(--panel-text-color); 
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--shadow-dark);
+    border-radius: 8px;
+    
+    display: none;
+    padding: 20px;
+    
+    max-height: 85vh; 
+    overflow-y: auto; 
 }
 
-/* Liste öğelerinin stilleri */
-.marka-item, .model-item { 
-    padding: 12px 15px; 
-    cursor: pointer; 
-    border-bottom: 1px solid #eee; 
-    font-size: 15px; 
-    transition: background-color 0.1s;
-} 
-.marka-item:hover, .model-item:hover { 
-    background-color: #f0f0f0; 
-} 
-.dropdown-panel input { 
-    width: calc(100% - 30px); 
-    padding: 10px; 
-    margin: 0 15px 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Paneldeki Başlıklar */
+.dropdown-panel h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--panel-border);
 }
 
-/* Karşılaştırma Tablosu Stili */
+/* Marka ve Model Listeleri Düzeni (Grid) */
+.marka-listesi, .model-listesi {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+    gap: 12px;
+    padding: 10px 0;
+}
+
+/* Marka ve Model Butonları */
+.marka-btn, .model-btn {
+    background-color: var(--panel-card-bg); 
+    color: var(--panel-text-color); 
+    
+    padding: 12px;
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.marka-btn:hover, .model-btn:hover {
+    background-color: var(--primary-color); 
+    color: white; 
+}
+
+/* Model Butonları (Resim içerdiği için) */
+.model-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 15px 10px;
+}
+
+.model-btn img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    border: 1px solid var(--panel-border);
+    background-color: white; 
+    border-radius: 4px;
+}
+
+/* Geri Butonu (Model listesi içinde) */
+.back-btn {
+    grid-column: 1 / -1; 
+    background-color: var(--secondary-color);
+    color: white; 
+    padding: 10px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+.back-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Karşılaştırma Tablosu Stilleri */
 #compare-results table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
-    font-size: 0.95em;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    background-color: var(--background-light);
+    box-shadow: 0 4px 8px var(--shadow-light);
+    border-radius: 8px;
+    overflow: hidden; 
 }
+
 #compare-results th, #compare-results td {
-    border: 1px solid #e0e0e0;
     padding: 12px 15px;
-    text-align: left;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-color); 
 }
+
 #compare-results thead th {
-    background-color: #f8f8f8;
-    color: #333;
-    font-weight: 600;
-    text-align: center;
-}
-#compare-results tbody td {
-    color: #555;
-    text-align: center;
-}
-#compare-results tbody td:first-child {
+    background-color: var(--primary-color);
+    color: white; 
     font-weight: bold;
-    color: #2c3e50;
-    background-color: #fcfcfc;
+    text-transform: uppercase;
+}
+
+#compare-results tbody tr:nth-child(odd) {
+    background-color: var(--background-light); 
+}
+#compare-results tbody tr:nth-child(even) {
+    background-color: #f1f1f1; /* Hafif gri */
+}
+
+#compare-results tbody td:first-child {
     text-align: left;
-    width: 20%;
+    font-weight: bold;
+    width: 150px;
+    color: var(--primary-color);
+    background-color: var(--background-dark); 
 }
 
 
@@ -900,93 +816,45 @@ footer a:hover {
 /* Responsive Tasarım (Küçük Ekranlar) */
 /* ==================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     #compare-boxes-container {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
         gap: 15px;
     }
     .compare-box {
-        width: 90%; 
-        max-width: 300px;
-        height: 180px;
+        width: 45%; 
+        max-width: none;
     }
 }
 
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    /* Navigasyonu mobil için iyileştir */
-    nav { 
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: center;
-    }
-    nav a {
-        margin: 5px 8px; /* Dikey boşluk ekle */
-        font-size: 0.9rem;
+@media (max-width: 600px) {
+    .compare-box {
+        width: 90%; 
+        height: 120px;
     }
 
-    .hero-section h2 {
-        font-size: 1.8rem;
-    }
-    .feature-list {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .feature-item {
-        min-width: 90%;
-    }
-    .brand-display {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .brand-details {
-        text-align: center;
-    }
-    
-    /* KARŞILAŞTIRMA TABLOSU DÜZELTMESİ: Yatay Kaydırma */
-    
-    /* Kapsayıcıya yatay kaydırma özelliği verin */
+    /* Tablo taşması */
     #compare-results {
-        width: 100%;
-        overflow-x: auto; /* Yatay kaydırmayı etkinleştir */
-    }
-    
-    /* Tablonun kaydırma çubuğunu tetiklemesi için minimum genişlik verin */
-    #compare-results table {
-        min-width: 650px; /* Mobil ekran genişliğinden fazla bir değer */
-        width: auto; 
-    }
-    
-    /* Hücrelerin genişliklerini ve metin sarımını ayarlayın */
-    #compare-results thead th, 
-    #compare-results tbody td {
-        min-width: 120px; /* Her sütuna minimum genişlik ver */
-        padding: 8px 10px;
-        white-space: normal; /* Metin sarımını etkinleştir */
-        display: table-cell; /* Önceki bozuk display: block kuralını ezdik */
+        overflow-x: auto;
     }
 
-    /* İlk sütun (Özellik Adı) daha geniş olsun */
-    #compare-results tbody td:first-child,
-    #compare-results thead th:first-child {
-        min-width: 150px;
-        text-align: left !important;
+    #compare-results table {
+        min-width: 600px; 
     }
     
-    /* Önceki bozuk kart görünümü kurallarını devre dışı bırakıyoruz: */
-    #compare-results thead, #compare-results tbody, #compare-results th, #compare-results td, #compare-results tr {
-        display: contents; /* Tablonun varsayılan görünümünü koru (Mobil bozulmayı giderir) */
+    .dropdown-panel {
+        max-width: 95%;
+        padding: 15px;
     }
-    /* ... (Diğer bozuk kurallar silindi) ... */
     
-    .watch-card {
-        flex-direction: column;
+    .marka-listesi, .model-listesi {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+        gap: 8px;
     }
-    .watch-card img {
-        margin: 0 auto 10px;
+    
+    .model-btn img {
+        width: 40px;
+        height: 40px;
     }
 }
 /* Marka logosu ve detaylarının geçişi için CSS */
@@ -1065,476 +933,60 @@ footer a:hover {
     color: #555;
     margin-top: 5px;
 }
-/* ========================================================================= */
-/* GENEL SIFIRLAMA VE DEĞİŞKENLER (Revize)     */
-/* ========================================================================= */
-:root {
-    --primary-color: #007bff;        /* Ana Mavi Vurgu */
-    --secondary-color: #6c757d;      /* Gri İkincil Vurgu */
-    --accent-color: #28a745;         /* Yeşil Vurgu (Özellikler için) */
-    --background-light: #ffffff;     /* Ana Arka Plan (BEYAZ) */
-    --background-dark: #f7f9fc;      /* Hafif Gri Arka Plan (Genel Sayfa) */
-    --text-color: #333;              /* Koyu Yazı Rengi */
-    --border-color: #e9ecef;         /* Çok Açık Gri Sınır Rengi */
-    --shadow-light: rgba(0, 0, 0, 0.08); 
-}
+/* style.css (SONUNA EKLEYİN) */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Genel sayfa düzeni */
-html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background-dark); /* Değişken Kullanımı */
-  color: var(--text-color);
-  min-width: 320px; /* Mobil için minimum genişlik */
-}
-
-/* Header (Başlık ve Navigasyon) - Değişkenlerle uyumlu */
-header {
-  background-color: #2c3e50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 6px var(--shadow-light);
-}
-
-header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 1.8rem;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  padding: 5px 0;
-  transition: color 0.3s, border-bottom 0.3s;
-  font-weight: 500;
-}
-
-nav a:hover {
-    color: #a4c6ff;
-    border-bottom: 2px solid #a4c6ff;
-}
-
-nav a.active {
-  border-bottom: 2px solid #fff;
-}
-
-/* Ana içerik */
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  padding: 40px 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Sayfa bölümleri (Genel kapsayıcı) */
-.page-section {
-    width: 100%;
-    margin-bottom: 50px;
-    background-color: var(--background-light);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px var(--shadow-light);
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    margin-top: auto;
-}
-
-footer a {
-    color: #a4c6ff;
+/* Dil butonu stilizasyonu */
+.lang-toggle-button {
+    /* Buton görünümü için */
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
     text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* ========================================================================= */
-/* COMPARE.HTML Stilleri - SIKINTILAR GİDERİLDİ              */
-/* ========================================================================= */
-
-/* Genel Konteyner için 4 Kutuyu Saran Bölüm */
-#compare-boxes-container {
-    display: flex; 
-    justify-content: center;
-    gap: 25px; /* Boşluk artırıldı */
-    margin-bottom: 40px;
-    flex-wrap: wrap; /* Mobil uyumluluk */
-}
-
-/* Tekil Saat Kutusu Stili - DAHA MODERN BİR GÖRÜNÜM */
-.compare-box {
-    width: 250px;
-    height: 200px; /* Yükseklik artırıldı */
-    background-color: var(--background-light); 
-    border: 2px solid var(--border-color);
-    border-radius: 15px; /* Daha yumuşak köşeler */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s, border-color 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Boş kutu stili */
-.compare-box:not(.selected) {
-    border: 2px dashed var(--secondary-color);
-}
-
-.compare-box:hover:not(.selected) {
-    border-color: var(--primary-color);
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2);
-}
-
-/* Seçim Butonu (BÜYÜK ARTI İŞARETİ) */
-.select-btn {
-    background: none;
-    color: var(--secondary-color);
-    border: none;
-    font-size: 3em;
-    cursor: pointer;
-    font-weight: 300;
-    line-height: 1;
-}
-
-.compare-box:hover .select-btn {
-    color: var(--primary-color);
-}
-
-/* Seçilmiş Durum */
-.compare-box.selected {
-    border: 3px solid var(--primary-color); /* Daha belirgin çerçeve */
-}
-
-/* Resmi Karartma Efekti (Metni Okunur Yapmak İçin) */
-.compare-box.selected::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* Hafif koyu katman */
-    z-index: 1;
-}
-
-/* Saat Bilgi Kutusu (Altta Sabit) */
-.watch-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 10px;
-    background: rgba(255, 255, 255, 0.95); /* Neredeyse opak beyaz */
-    z-index: 2;
-    text-align: center;
-    color: var(--text-color);
-    border-top: 1px solid var(--border-color);
-}
-.watch-info h4 {
-    margin: 0;
-    color: var(--primary-color);
-    font-size: 1.1em;
-}
-.watch-info p {
-    margin: 0;
-    font-size: 0.85em;
-    color: var(--secondary-color);
-}
-
-/* Kaldır Butonu */
-.remove-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #dc3545; /* Kırmızı */
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    cursor: pointer;
     font-weight: bold;
-    z-index: 3;
-    opacity: 0.9;
-    transition: opacity 0.2s;
-    display: none; 
-}
-.compare-box.selected .remove-btn {
-    display: block;
-}
-.remove-btn:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-
-/* ========================================================================= */
-/* DROPDOWN PANEL (MODAL) Stilleri                    */
-/* ========================================================================= */
-
-/* 1. OVERLAY (Karartma Katmanı) */
-.dropdown-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(44, 62, 80, 0.85); /* Koyu başlık rengi ile uyumlu */
-    z-index: 999; /* Z-index yükseltildi */
-    display: none;
-}
-.dropdown-overlay.active {
-    display: block;
-}
-
-/* 2. PANEL (Marka/Model Seçim Kutusu) */
-.dropdown-panel {
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    z-index: 1000; /* Z-index yükseltildi */
-    width: 95%;
-    max-width: 600px; /* Genişlik artırıldı */
-    
-    background-color: var(--background-light); 
-    color: var(--text-color); 
-    border: none;
-    box-shadow: 0 10px 30px var(--shadow-light);
-    border-radius: 10px;
-    
-    display: none;
-    padding: 30px;
-    
-    max-height: 90vh; /* Yükseklik artırıldı */
-    overflow-y: auto; 
-}
-
-/* Paneldeki Başlıklar */
-.dropdown-panel h3 {
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-/* Marka ve Model Listeleri Düzeni (Grid) */
-.marka-listesi, .model-listesi {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Daha esnek grid */
-    gap: 15px;
-    padding: 10px 0;
-}
-
-/* Marka ve Model Butonları - DAHA ETKİLEŞİMLİ */
-.marka-btn, .model-btn {
-    background-color: var(--background-dark); 
-    color: var(--text-color); 
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: transparent;
     cursor: pointer;
-    font-size: 1em;
-    font-weight: 500;
-    transition: all 0.2s;
-}
-
-.marka-btn:hover, .model-btn:hover {
-    background-color: var(--primary-color); 
-    color: white; 
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-}
-
-/* Model Butonları (Resim içerdiği için) */
-.model-btn {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 10px;
-}
-
-.model-btn img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 8px;
-    border: 1px solid var(--border-color);
-    background-color: white; 
-    border-radius: 6px;
-}
-
-/* Geri Butonu (Model listesi içinde) */
-.back-btn {
-    grid-column: 1 / -1; 
-    background-color: var(--secondary-color);
-    color: white; 
-    padding: 12px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.2s;
-}
-.back-btn:hover {
-    background-color: #5a6268;
-}
-
-/* Karşılaştırma Tablosu Stilleri */
-#compare-results table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: var(--background-light);
-    box-shadow: 0 4px 8px var(--shadow-light);
-    border-radius: 8px;
-    overflow: hidden; 
-}
-
-#compare-results th, #compare-results td {
-    padding: 12px 15px;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    color: var(--text-color); 
-}
-
-#compare-results thead th {
-    background-color: #34495e; /* Koyu renk başlık */
-    color: white; 
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-#compare-results tbody tr:nth-child(even) {
-    background-color: var(--background-dark); 
-}
-
-#compare-results tbody td:first-child {
-    text-align: left;
-    font-weight: bold;
-    width: 180px;
-    color: var(--primary-color);
-    background-color: #f1f1f1; /* Özellik adı için hafif gri */
-}
-
-
-/* ========================================================================= */
-/* RESPONSIVE TASARIM (SON)                          */
-/* ========================================================================= */
-
-@media (max-width: 768px) {
-    /* Genel ayarlamalar */
-    main {
-        padding: 20px 10px;
-    }
+    line-height: 1; 
     
-    /* Karşılaştırma kutuları (Mobil) */
-    #compare-boxes-container {
-        gap: 15px;
-    }
-    .compare-box {
-        width: calc(50% - 10px); 
-        height: 160px;
-        max-width: 250px;
-    }
-
-    /* Tablo taşması */
-    #compare-results {
-        overflow-x: auto;
-    }
-
-    #compare-results table {
-        min-width: 700px; /* Tablonun mobil cihazda küçülmesini engelle */
-    }
-    
-    /* Modal/Panel (Mobil) */
-    .dropdown-panel {
-        max-width: 95%;
-        padding: 20px;
-    }
-    
-    .marka-listesi, .model-listesi {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); 
-        gap: 10px;
-    }
-    
-    .model-btn img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .watch-info {
-        padding: 10px 5px;
-    }
-    .watch-info h4 {
-        font-size: 1em;
-    }
+    /* Sağ üste konumlandırma */
+    position: absolute; /* Header'a göre konumlanır */
+    top: 25px; /* Üstten boşluk */
+    right: 30px; /* Sağdan boşluk */
+    z-index: 1000; /* Diğer elementlerin üstünde kalması için */
 }
 
-/* Ekstra küçük cihazlar (320-480px) */
-@media (max-width: 480px) {
-    .compare-box {
-        width: 90%; 
-        height: 180px;
-    }
-    
-    .dropdown-panel {
-        padding: 15px;
-    }
-    
-    .marka-listesi, .model-listesi {
-        grid-template-columns: repeat(2, 1fr); /* 2 sütuna sabitle */
-    }
+.lang-toggle-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-light);
+}
+
+/* Header'ın pozisyonunu ayarlayın ki buton ona göre konumlanabilsin */
+header {
+    /* Eğer header'da position: relative; yoksa ekleyin: */
+    position: relative; 
+    /* ... (Mevcut header stilleri) ... */
+}
+
+/* Sayfa içeriği için main'e padding verin ki butonun arkasında kalmasın */
+main {
+    padding-top: 50px; /* Header yüksekliğine göre ayarlayın */
 }
 /* ================================================= */
 /* KAPSAMLI MOBİL UYUM KURALLARI (Responsive Design) */
 /* ================================================= */
 
-/* Ekran genişliği 768 piksel ve altı için genel kurallar (Mobil ve Tablet) */
+/* Ekran genişliği 768 piksel ve altı için genel kurallar */
 @media (max-width: 768px) {
     
     /* A. HEADER VE NAVİGASYON DÜZENLEMESİ */
     header {
-        /* Başlık ve navigasyonu alt alta dizmek için */
-        display: flex;
-        flex-direction: column; 
+        flex-direction: column; /* Başlık ve navigasyonu alt alta diz */
         align-items: center;
         padding: 15px 10px;
     }
 
-    header h1 {
-        margin-bottom: 10px; 
-        font-size: 1.6rem;
-    }
-    
     /* Navigasyon Linklerini Alt Alta ve Tam Genişlikte Diz */
     nav {
         display: flex;
@@ -1546,125 +998,53 @@ footer a:hover {
     nav a {
         margin: 5px 0;
         padding: 8px 0;
-        width: 90%; 
+        width: 90%; /* Linklerin genişliğini ayarla */
         text-align: center;
+        /* Varsayılan border-right: none; ekliyoruz */
+        border-right: none; 
+        /* Alttan çizgi ekleyerek ayırıyoruz */
         border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
     }
     
     nav a:last-of-type {
-        border-bottom: none;
+        border-bottom: none; /* Son linkte alttan çizgi olmasın */
     }
     
-    /* Dil butonunu normal akışa al ve konumunu sıfırla (eğer varsa) */
-    .lang-toggle-button {
-        position: static; 
-        margin: 10px 0 15px 0; 
-        width: 90%; 
-        text-align: center;
-        padding: 10px;
-    }
-
     /* B. ANA İÇERİK DÜZENLEMESİ (GENEL) */
     main {
-        padding: 20px 10px; 
+        padding: 20px 10px; /* Kenar boşluklarını daralt */
     }
 
-    .page-section {
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-    
-    /* C. INDEX.HTML - HERO VE ÖZELLİKLER */
-    .hero-section {
-        padding: 40px 15px; /* Hero bölümü paddingini azalt */
-    }
-
-    .hero-section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .cta-buttons-container {
-        flex-direction: column; /* CTA butonlarını alt alta sırala */
-        gap: 15px;
-    }
-    
-    .cta-button {
-        width: 100%;
-    }
-    
-    /* Özellik Listesi (Feature List) Alt Alta Al */
-    .feature-list {
+    /* Ana sayfa özellik listesini ve butonları alt alta al */
+    .feature-list, .cta-buttons-container, .brand-display {
         flex-direction: column; 
         gap: 20px;
     }
     
     .feature-item {
-        min-width: 100%; /* Tam genişlik kullan */
-        max-width: 100%;
+        width: 100%; 
+        max-width: none;
     }
-    
-    /* Marka Gösterim Alanı (Brand Spotlight) Alt Alta Al */
-    .brand-display {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    
-    .brand-details {
-        text-align: center; /* Marka detaylarını ortala */
-        max-width: 100%;
-    }
-    
-    #brandImageContainer {
-        margin: 0 auto;
-    }
-    
-    /* D. CONTACT.HTML DÜZENLEMESİ */
-    .contact-page-section {
-        flex-direction: column; 
-    }
-    
-    /* E. KARŞILAŞTIRMA SAYFASI (COMPARE.HTML) DÜZENLEMESİ */
-    
-    /* 4 Karşılaştırma Kutusu Alt Alta Gelsin */
+
+    /* C. COMPARE.HTML KARŞILAŞTIRMA KUTULARI */
     #compare-boxes-container {
         flex-direction: column; 
         align-items: center;
         gap: 15px;
     }
 
-    /* Karşılaştırma Kutusu yeniden boyutlandırma (mevcut 600px kuralını geçersiz kılabilir) */
     .compare-box {
-        width: 90%; 
-        height: 150px; 
+        width: 90%; /* Kutuların çoğunu kaplamasını sağla */
         margin: 0;
+        height: 150px; /* Daha kompakt */
     }
     
-    /* Tablo Taşması için Kritik Ayar */
+    /* D. TABLO TAŞMASI İÇİN KRİTİK AYAR */
     #compare-results {
         overflow-x: auto; /* Tablo genişliği taşarsa yatay kaydırma çubuğu göster */
     }
 
     #compare-results table {
-        /* Mobil görünümde tablonun kaydırılabilmesi için minimum genişlik atayın */
-        min-width: 700px; 
-    }
-}
-
-
-/* Ekstra küçük ekranlar için ince ayarlar */
-@media (max-width: 480px) {
-    .hero-section h2 {
-        font-size: 1.6rem;
-    }
-    
-    /* Navigasyon linkleri için daha az padding */
-    nav a {
-        padding: 5px 0;
-    }
-    
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 1em;
+        min-width: 700px; /* Tablo içeriğinin sığması için min genişlik */
     }
 }
