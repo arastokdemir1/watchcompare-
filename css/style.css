@@ -1514,3 +1514,134 @@ footer a:hover {
         grid-template-columns: repeat(2, 1fr); /* 2 sütuna sabitle */
     }
 }
+/* ================================================= */
+/* KAPSAMLI MOBİL UYUM KURALLARI (Responsive Design) */
+/* ================================================= */
+
+/* Ekran genişliği 768 piksel ve altı için genel kurallar (Mobil ve Tablet) */
+@media (max-width: 768px) {
+    
+    /* A. HEADER VE NAVİGASYON DÜZENLEMESİ */
+    
+    /* Header'ı dikey hizala */
+    header {
+        display: flex; /* Daha önce gizli olan flex tanımını etkinleştiriyoruz */
+        flex-direction: column; /* İçeriği alt alta diz */
+        align-items: center;
+        padding: 15px 10px;
+    }
+
+    header h1 {
+        margin-bottom: 10px; 
+    }
+    
+    /* Dil butonunun konumunu sıfırla ve akışa dahil et */
+    .lang-toggle-button {
+        position: static; 
+        margin: 10px 0 15px 0; /* Altına ve üstüne boşluk bırak */
+        width: 100%; 
+        text-align: center;
+        /* Daha önceki padding-top: 50px kuralını geçersiz kılmak için */
+        padding: 8px 12px; 
+    }
+
+    /* Navigasyon Linklerini Alt Alta Diz */
+    nav {
+        display: flex;
+        flex-direction: column; 
+        width: 100%; 
+        align-items: center;
+    }
+
+    nav a {
+        margin: 5px 0;
+        padding: 8px 0;
+        width: 80%; /* Linklerin genişliğini ayarla */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+        text-align: center;
+    }
+    
+    nav a.active, nav a:hover {
+        border-bottom: 2px solid #fff;
+    }
+    
+    /* B. ANA İÇERİK DÜZENLEMESİ (INDEX.HTML) */
+    
+    main {
+        padding: 20px 10px; /* Ana içeriğin kenar boşluklarını azalt */
+        align-items: stretch; /* İçeriklerin tam genişliği kullanmasını sağla */
+    }
+
+    .hero-section {
+        padding: 30px 20px; /* Hero bölümü paddingini azalt */
+    }
+
+    .hero-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-buttons-container {
+        flex-direction: column; /* CTA butonlarını alt alta sırala */
+        gap: 10px;
+    }
+
+    /* Özellik Listesi (Feature List) Alt Alta Al */
+    .feature-list {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    
+    .feature-item {
+        min-width: 100%; /* Tam genişlik kullan */
+    }
+    
+    /* Marka Gösterim Alanı (Brand Spotlight) Alt Alta Al */
+    .brand-display {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .brand-details {
+        text-align: center; /* Marka detaylarını ortala */
+        max-width: 100%;
+    }
+
+    /* C. KARŞILAŞTIRMA SAYFASI (COMPARE.HTML) DÜZENLEMESİ */
+    
+    /* 4 Karşılaştırma Kutusu Alt Alta Gelsin */
+    #compare-boxes-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .compare-box {
+        width: 90%; /* Kutuların mobilin çoğunu kaplamasını sağla */
+        height: 150px; /* Daha kompakt hale getir */
+    }
+    
+    /* D. TABLO TAŞMASI İÇİN KRİTİK AYAR */
+    
+    /* Karşılaştırma sonuçlarını yana kaydırılabilir yap */
+    #compare-results table {
+        /* Bu kural zaten mevcuttu, ancak tekrar kontrol amacıyla ekledim */
+        width: 100%;
+    }
+
+    #compare-results {
+        overflow-x: auto; /* Tablo genişliği taşarsa yatay kaydırma çubuğu göster */
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+/* Çok küçük ekranlar için ek düzenlemeler */
+@media (max-width: 480px) {
+    .page-section {
+        padding: 20px 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.5rem;
+    }
+}
