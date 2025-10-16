@@ -835,3 +835,76 @@ main {
         font-size: 1.5rem;
     }
 }
+/* ==================================== */
+/* TEK VE KESİN ÇÖZÜM: SEÇİLİ KUTU VE METİN GİZLEME */
+/* ==================================== */
+
+/* 1. Seçili Karşılaştırma Kutusu Ana Stili */
+.compare-box.selected {
+    border: 2px solid var(--primary-color);
+    cursor: default;
+    
+    /* KÖKTEN ÇÖZÜM: Kutunun içindeki tüm metin içeriğini sıfırlar */
+    font-size: 0 !important;       /* KUTU İÇİNDEKİ TÜM METİN BOYUTUNU SIFIRLA */
+    line-height: 0 !important;     /* KESİN: Metin satır boşluğunu sıfırla */
+    color: transparent !important; /* TÜM METİN RENGİNİ ŞEFFAF YAP */
+    
+    /* Resim Ortalaması İçin Ayarlar */
+    display: block; 
+    padding: 5px; 
+    overflow: hidden;
+    position: relative; 
+}
+
+/* 2. Seçili Kutuya Eklenen Saat Resmi (MUTLAK KONUMLANDIRMA İLE KESİN ORTALAMA) */
+.compare-box.selected img {
+    display: block;
+    object-fit: contain; 
+    
+    /* Mutlak konumlandırma ile KESİN ORTALAMA */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* KESİN: Tam merkezleme */
+    
+    /* Boyutlandırma */
+    max-width: 90%;  
+    max-height: 90%; 
+    width: auto;
+    height: auto;
+    
+    margin: 0 !important; 
+    z-index: 2;
+}
+
+/* 3. Resmin altındaki saat bilgisi (Metni tamamen gizle) */
+.watch-info {
+    /* Daha önce yazdık ama tekrar edelim ki %100 gizlensin */
+    display: none !important; /* KESİN: Metni tamamen gizle */
+}
+
+/* 4. Silme Butonu ('x') - Buton metni için fontu geri aç */
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: white !important; /* Rengi geri aç */
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 3; 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 14px !important; /* Boyutu geri aç */
+}
+
+/* Kutu seçildiğinde silme butonunu görünür yap */
+.compare-box.selected .remove-btn {
+    display: flex; 
+}
