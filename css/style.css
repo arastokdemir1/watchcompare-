@@ -597,26 +597,6 @@ footer a:hover {
     cursor: pointer;
 }
 
-/* Seçilmiş Durum */
-.compare-box.selected {
-    background-size: cover;
-    background-position: center;
-    border: 2px solid var(--primary-color);
-    cursor: default;
-}
-
-.compare-box.selected::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Açık temada resmi daha görünür yapmak için hafif beyazlama */
-    background: rgba(255, 255, 255, 0.4); 
-    z-index: 1;
-}
-
 .watch-info {
     position: absolute;
     bottom: 0;
@@ -636,28 +616,6 @@ footer a:hover {
     margin: 0;
     font-size: 0.9em;
 }
-
-.remove-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: #dc3545; 
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    cursor: pointer;
-    font-weight: bold;
-    z-index: 3;
-    display: none; 
-}
-.compare-box.selected .remove-btn {
-    display: block;
-}
-
 
 /* 1. OVERLAY (Karartma Katmanı) */
 .dropdown-overlay {
@@ -1095,24 +1053,73 @@ main {
         height: 180px;
     }
 }
-/* MOBİLDEKİ SAAT EKLEME GÖRSEL SORUNU İÇİN DÜZELTME */
+/* ==================================== */
+/* SEÇİLİ SAAT KUTUSU VE BUTON DÜZELTMELERİ */
+/* ==================================== */
 
+/* 1. Seçili Karşılaştırma Kutusu Ana Stili */
 .compare-box.selected {
-    /* İçeriğin taşmasını engellemek ve düzgün hizalamak için */
+    border: 2px solid var(--primary-color);
+    cursor: default;
+    
+    /* İçeriği (resim ve yazı) dikey ve yatayda ortalamak için */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* İçeriği üstten başlat */
+    justify-content: center;
     align-items: center;
     padding: 10px;
-    overflow: hidden; /* En önemlisi: Kutu dışına taşan her şeyi gizle */
+    
+    /* Taşmaları engellemek için */
+    overflow: hidden;
+    position: relative; /* Butonun konumlanması için gerekli */
 }
 
+/* 2. Seçili Kutuya Eklenen Saat Resmi */
 .compare-box.selected img {
-    /* Resmin kutuya doğru şekilde sığmasını sağlayan kurallar */
     display: block;
-    max-width: 100%;         /* Resim, kutu genişliğini asla geçemez */
-    max-height: 90px;        /* Resmin dikeyde çok yer kaplamasını önler */
-    width: auto;             /* En-boy oranını korur */
-    object-fit: contain;     /* Görüntüyü bozmadan alana sığdırır */
-    margin-bottom: 10px;     /* Resim ile alttaki yazı arasına boşluk koyar */
+    max-width: 95%;      /* Kenarlara çok yapışmasın */
+    max-height: 90px;    /* Yüksekliği sınırla */
+    width: auto;         /* Oranı koru */
+    height: auto;        /* Oranı koru */
+    object-fit: contain; /* Görüntüyü bozmadan sığdır */
+    margin-bottom: 8px;  /* Resimle yazı arasına boşluk bırak */
+    z-index: 2;          /* Yazı ve overlay'in üstünde kalsın */
+}
+
+/* 3. Resmin altındaki saat bilgisi */
+.watch-info {
+    position: relative; /* Statik konumlamaya çevirerek resmin altına iter */
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    color: var(--text-secondary);
+    /* Arka plan ve padding gibi eski kurallarını korur */
+}
+
+/* 4. Silme Butonu ('x') */
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 3; /* En üstte kalması için */
+    
+    /* 'x' işaretini mükemmel ortalamak için */
+    display: none; /* Varsayılan olarak gizli */
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 14px; /* 'x' boyutunu ayarlayabilirsiniz */
+}
+
+/* Kutu seçildiğinde silme butonunu görünür yap */
+.compare-box.selected .remove-btn {
+    display: flex; 
 }
