@@ -1048,3 +1048,50 @@ main {
         min-width: 700px; /* Tablo içeriğinin sığması için min genişlik */
     }
 }
+/* style.css EN SONUNA EKLEYİN */
+@media (max-width: 768px) {
+    /* HEADER VE NAVİGASYON DÜZENLEMESİ */
+    header {
+        flex-direction: column; /* İçeriği alt alta diz */
+        align-items: center;
+        padding: 10px 10px; /* Padding'i küçült */
+        height: auto; /* Yüksekliği otomatik ayarla */
+    }
+
+    header h1 {
+        font-size: 1.4rem; /* Başlık boyutunu küçült */
+        margin-bottom: 5px; 
+    }
+    
+    nav {
+        flex-direction: column; 
+        width: 100%; 
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%; /* Linklerin tam genişliği kullanmasını sağla */
+        padding: 8px 0;
+        text-align: center;
+        /* Mobil menü çizgileri */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Header sabit olduğu için main içeriği de mobil menünün altından başlamalı */
+    main {
+        /* Yeni, daha küçük header'ın altından başlaması için daha az boşluk bırakıyoruz */
+        padding-top: 150px; /* Mobil header yüksekliğine göre ayarlayın. Eğer hala bozuksa bu değeri deneyerek artırın/azaltın */
+    }
+
+    /* Diğer mobil kurallar... */
+    #compare-boxes-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .compare-box {
+        width: 90%;
+        margin: 10px auto;
+        height: 180px;
+    }
+}
