@@ -279,7 +279,7 @@ footer a:hover {
 /* Tekil Saat Kutusu Stili */
 .compare-box {
     width: 250px;
-    height: 150px;
+    height: 200px;
     background-color: var(--background-dark); /* Açık tema için daha koyu bir arka plan */
     border: 2px dashed var(--border-color);
     border-radius: 8px;
@@ -733,25 +733,34 @@ main {
     position: relative; 
 }
 
-/* 2. Seçili Kutuya Eklenen Saat Resmi */
+/* 2. Seçili Kutuya Eklenen Saat Resmi (MUTLAK KONUMLANDIRMA İLE KESİN ORTALAMA) */
 .compare-box.selected img {
     display: block;
-    max-width: 100%;  /* KESİN DÜZELTME: Kutunun tamamını kullan */
-    max-height: 100%; /* KESİN DÜZELTME: Kutunun tamamını kullan */
+    object-fit: contain; 
+    
+    /* Mutlak konumlandırma ile ortalama */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* KESİN: Tam merkezleme */
+    
+    /* Boyutlandırma */
+    max-width: 90%;  /* Kutuyu doldururken kenarlara yapışmasın */
+    max-height: 90%; /* Kutuyu doldururken kenarlara yapışmasın */
     width: auto;
     height: auto;
-    object-fit: contain; /* Görüntüyü bozmadan sığdır */
-    margin: 0 !important; /* TÜM DİKEY/YATAY MARJİNLERİ SIFIRLA */
+    
+    margin: 0 !important; /* Marjinleri sıfırla */
     z-index: 2;
 }
 
 /* 3. Resmin altındaki saat bilgisi (Metni tamamen gizle) */
-/* Bu kural, metnin tekrar görünmesini sağlayan çakışan tüm kuralları ezmelidir. */
+/* Metin yoksa bile, gelecekteki eklemelere karşı gizli kalsın. */
 .watch-info {
     display: none !important; /* KESİN: Metni tamamen gizle */
 }
 
-/* 4. Silme Butonu ('x') */
+/* 4. Silme Butonu ('x') - Konumu değişmedi, yine de kontrol edin */
 .remove-btn {
     position: absolute;
     top: 5px;
@@ -764,10 +773,8 @@ main {
     height: 25px;
     cursor: pointer;
     font-weight: bold;
-    z-index: 3; /* En üstte kalması için */
-    
-    /* 'x' işaretini mükemmel ortalamak için */
-    display: none; /* Varsayılan olarak gizli */
+    z-index: 3; 
+    display: none; 
     justify-content: center;
     align-items: center;
     padding: 0;
