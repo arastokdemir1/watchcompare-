@@ -1032,14 +1032,9 @@ main {
     z-index: 2;
 }
 
-/* 3. Resmin altındaki saat bilgisi */
+/* 3. Resmin altındaki saat bilgisi (Metni tamamen gizle) */
 .watch-info {
-    position: relative; /* Statik konumlamaya çevirerek resmin altına iter */
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    color: var(--text-secondary);
-    /* Arka plan ve padding gibi eski kurallarını korur */
+    display: none !important; /* Metni tamamen gizle */
 }
 
 /* 4. Silme Butonu ('x') */
