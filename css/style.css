@@ -1095,3 +1095,30 @@ main {
         height: 180px;
     }
 }
+/* style.css içinde: COMPARE KUTULARI VE İÇERİKLERİ STİLLERİ bölümünde */
+
+.compare-box .watch-image {
+    /* Görselin maksimum genişliği, kutunun tamamını kaplamasını engeller */
+    max-width: 80%; 
+    
+    /* KRİTİK: Görselin kutu yüksekliğine göre SÜREKLİ SINIRLANMASINI sağlar */
+    max-height: 100px; /* Bu değeri 100px veya 120px gibi bir değerle deneyin */
+    
+    /* En boy oranını koruyarak kutuya sığmasını sağlar */
+    object-fit: contain; 
+    
+    margin: 5px auto;
+    transition: all 0.3s;
+    
+    /* Mobil düzende esneme önceliği vermiyoruz, boyutunu korumalı */
+    flex-shrink: 0; 
+}
+
+/* Seçili kutunun flex konteynerini de kontrol edelim */
+.compare-box.selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* İçeriği dikeyde eşit yay */
+    padding: 10px; 
+    height: 100%; 
+}
