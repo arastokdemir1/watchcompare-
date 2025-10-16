@@ -936,112 +936,68 @@ main {
 /* ================================================= */
 
 /* Ekran genişliği 768 piksel ve altı için genel kurallar */
+/* ================================================= */
+/* GÜNCELLENMİŞ MOBİL UYUM KURALLARI (768px ve altı) */
+/* ================================================= */
 @media (max-width: 768px) {
     
     /* A. HEADER VE NAVİGASYON DÜZENLEMESİ */
     header {
-        flex-direction: column; /* Başlık ve navigasyonu alt alta diz */
-        align-items: center;
-        padding: 15px 10px;
-    }
-
-    /* Navigasyon Linklerini Alt Alta ve Tam Genişlikte Diz */
-    nav {
+        /* Başlık, menü ve dil butonunu tek bir satırda tutmaya çalış */
         display: flex;
-        flex-direction: column; 
-        width: 100%; 
+        flex-direction: row; 
+        flex-wrap: wrap; /* Sığmazsa alt satıra geçsin */
+        justify-content: space-between; /* Aralarında boşluk bırak */
         align-items: center;
-    }
-
-    nav a {
-        margin: 5px 0;
-        padding: 8px 0;
-        width: 90%; /* Linklerin genişliğini ayarla */
-        text-align: center;
-        /* Varsayılan border-right: none; ekliyoruz */
-        border-right: none; 
-        /* Alttan çizgi ekleyerek ayırıyoruz */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+        padding: 10px 10px;
+        height: auto;
     }
     
-    nav a:last-of-type {
-        border-bottom: none; /* Son linkte alttan çizgi olmasın */
-    }
-    
-    /* B. ANA İÇERİK DÜZENLEMESİ (GENEL) */
-    main {
-        padding: 20px 10px; /* Kenar boşluklarını daralt */
-    }
-
-    /* Ana sayfa özellik listesini ve butonları alt alta al */
-    .feature-list, .cta-buttons-container, .brand-display {
-        flex-direction: column; 
-        gap: 20px;
-    }
-    
-    .feature-item {
-        width: 100%; 
-        max-width: none;
-    }
-
-    /* C. COMPARE.HTML KARŞILAŞTIRMA KUTULARI */
-    #compare-boxes-container {
-        flex-direction: column; 
-        align-items: center;
-        gap: 15px;
-    }
-
-    .compare-box {
-        width: 90%; /* Kutuların çoğunu kaplamasını sağla */
-        margin: 0;
-        height: 150px; /* Daha kompakt */
-    }
-    
-    /* D. TABLO TAŞMASI İÇİN KRİTİK AYAR */
-    #compare-results {
-        overflow-x: auto; /* Tablo genişliği taşarsa yatay kaydırma çubuğu göster */
-    }
-
-    #compare-results table {
-        min-width: 700px; /* Tablo içeriğinin sığması için min genişlik */
-    }
-}
-/* style.css EN SONUNA EKLEYİN */
-@media (max-width: 768px) {
-    /* HEADER VE NAVİGASYON DÜZENLEMESİ */
-    header {
-        flex-direction: column; /* İçeriği alt alta diz */
-        align-items: center;
-        padding: 10px 10px; /* Padding'i küçült */
-        height: auto; /* Yüksekliği otomatik ayarla */
-    }
-
     header h1 {
-        font-size: 1.4rem; /* Başlık boyutunu küçült */
-        margin-bottom: 5px; 
+        font-size: 1.2rem; /* Başlığı küçült */
+        margin-bottom: 0;
+        order: 1; /* İlk sırada yer alsın */
     }
-    
+
     nav {
-        flex-direction: column; 
-        width: 100%; 
-        align-items: center;
+        /* Navigasyon linklerini yan yana, sıkıştırılmış halde diz */
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-around; 
+        flex-wrap: wrap; 
+        width: 100%; /* Tam genişliği kapla */
+        order: 3; /* En alta (3. sırada) yer alsın */
+        margin-top: 5px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 5px;
     }
 
     nav a {
-        width: 100%; /* Linklerin tam genişliği kullanmasını sağla */
-        padding: 8px 0;
+        width: auto; 
+        padding: 5px 8px; /* Padding'i küçült */
+        font-size: 0.9em; /* Yazı boyutunu küçült */
+        margin: 5px 2px;
         text-align: center;
-        /* Mobil menü çizgileri */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: none; /* Alt çizgiyi kaldır */
     }
     
-    /* Header sabit olduğu için main içeriği de mobil menünün altından başlamalı */
-    main {
-        /* Yeni, daha küçük header'ın altından başlaması için daha az boşluk bırakıyoruz */
-        padding-top: 150px; /* Mobil header yüksekliğine göre ayarlayın. Eğer hala bozuksa bu değeri deneyerek artırın/azaltın */
+    /* Dil butonu (eğer varsa) */
+    .lang-toggle-button {
+        position: relative; /* Sabit pozisyondan çıkar */
+        top: auto;
+        right: auto;
+        order: 2; /* İkinci sırada yer alsın (başlık ve menü arasında) */
+        padding: 5px 8px;
+        font-size: 0.8em;
     }
 
-    /* Diğer mobil kurallar... */
+    /* B. ANA İÇERİK DÜZENLEMESİ */
+    main {
+        padding: 20px 10px; 
+        padding-top: 20px; /* Header artık küçük olduğu için bu padding yeterli */
+    }
+    
+    /* C. KARŞILAŞTIRMA KUTULARI (Önceki düzeltmeyi korur) */
     #compare-boxes-container {
         flex-direction: column; 
         align-items: center;
@@ -1050,7 +1006,16 @@ main {
     .compare-box {
         width: 90%;
         margin: 10px auto;
-        height: 180px;
+        height: 150px;
+    }
+    
+    /* D. TABLO TAŞMASI */
+    #compare-results {
+        overflow-x: auto; 
+    }
+
+    #compare-results table {
+        min-width: 650px; /* Tablonun yatayda kaydırılabilmesi için minimum genişlik */
     }
 }
 /* ==================================== */
@@ -1077,13 +1042,13 @@ main {
 /* 2. Seçili Kutuya Eklenen Saat Resmi */
 .compare-box.selected img {
     display: block;
-    max-width: 95%;      /* Kenarlara çok yapışmasın */
-    max-height: 90px;    /* Yüksekliği sınırla */
-    width: auto;         /* Oranı koru */
-    height: auto;        /* Oranı koru */
-    object-fit: contain; /* Görüntüyü bozmadan sığdır */
-    margin-bottom: 8px;  /* Resimle yazı arasına boşluk bırak */
-    z-index: 2;          /* Yazı ve overlay'in üstünde kalsın */
+    max-width: 95%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain; 
+    margin: 0 auto 8px auto; /* YENİ: Resmin yatayda otomatik kenar boşluklarıyla ortalanması */
+    z-index: 2;
 }
 
 /* 3. Resmin altındaki saat bilgisi */
