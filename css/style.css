@@ -1522,30 +1522,20 @@ footer a:hover {
 @media (max-width: 768px) {
     
     /* A. HEADER VE NAVİGASYON DÜZENLEMESİ */
-    
-    /* Header'ı dikey hizala */
     header {
-        display: flex; /* Daha önce gizli olan flex tanımını etkinleştiriyoruz */
-        flex-direction: column; /* İçeriği alt alta diz */
+        /* Başlık ve navigasyonu alt alta dizmek için */
+        display: flex;
+        flex-direction: column; 
         align-items: center;
         padding: 15px 10px;
     }
 
     header h1 {
         margin-bottom: 10px; 
+        font-size: 1.6rem;
     }
     
-    /* Dil butonunun konumunu sıfırla ve akışa dahil et */
-    .lang-toggle-button {
-        position: static; 
-        margin: 10px 0 15px 0; /* Altına ve üstüne boşluk bırak */
-        width: 100%; 
-        text-align: center;
-        /* Daha önceki padding-top: 50px kuralını geçersiz kılmak için */
-        padding: 8px 12px; 
-    }
-
-    /* Navigasyon Linklerini Alt Alta Diz */
+    /* Navigasyon Linklerini Alt Alta ve Tam Genişlikte Diz */
     nav {
         display: flex;
         flex-direction: column; 
@@ -1556,24 +1546,37 @@ footer a:hover {
     nav a {
         margin: 5px 0;
         padding: 8px 0;
-        width: 80%; /* Linklerin genişliğini ayarla */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+        width: 90%; 
         text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
     }
     
-    nav a.active, nav a:hover {
-        border-bottom: 2px solid #fff;
+    nav a:last-of-type {
+        border-bottom: none;
     }
     
-    /* B. ANA İÇERİK DÜZENLEMESİ (INDEX.HTML) */
-    
-    main {
-        padding: 20px 10px; /* Ana içeriğin kenar boşluklarını azalt */
-        align-items: stretch; /* İçeriklerin tam genişliği kullanmasını sağla */
+    /* Dil butonunu normal akışa al ve konumunu sıfırla (eğer varsa) */
+    .lang-toggle-button {
+        position: static; 
+        margin: 10px 0 15px 0; 
+        width: 90%; 
+        text-align: center;
+        padding: 10px;
     }
 
+    /* B. ANA İÇERİK DÜZENLEMESİ (GENEL) */
+    main {
+        padding: 20px 10px; 
+    }
+
+    .page-section {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    /* C. INDEX.HTML - HERO VE ÖZELLİKLER */
     .hero-section {
-        padding: 30px 20px; /* Hero bölümü paddingini azalt */
+        padding: 40px 15px; /* Hero bölümü paddingini azalt */
     }
 
     .hero-section h2 {
@@ -1582,17 +1585,22 @@ footer a:hover {
     
     .cta-buttons-container {
         flex-direction: column; /* CTA butonlarını alt alta sırala */
-        gap: 10px;
+        gap: 15px;
     }
-
+    
+    .cta-button {
+        width: 100%;
+    }
+    
     /* Özellik Listesi (Feature List) Alt Alta Al */
     .feature-list {
         flex-direction: column; 
-        gap: 15px;
+        gap: 20px;
     }
     
     .feature-item {
         min-width: 100%; /* Tam genişlik kullan */
+        max-width: 100%;
     }
     
     /* Marka Gösterim Alanı (Brand Spotlight) Alt Alta Al */
@@ -1606,42 +1614,57 @@ footer a:hover {
         text-align: center; /* Marka detaylarını ortala */
         max-width: 100%;
     }
-
-    /* C. KARŞILAŞTIRMA SAYFASI (COMPARE.HTML) DÜZENLEMESİ */
+    
+    #brandImageContainer {
+        margin: 0 auto;
+    }
+    
+    /* D. CONTACT.HTML DÜZENLEMESİ */
+    .contact-page-section {
+        flex-direction: column; 
+    }
+    
+    /* E. KARŞILAŞTIRMA SAYFASI (COMPARE.HTML) DÜZENLEMESİ */
     
     /* 4 Karşılaştırma Kutusu Alt Alta Gelsin */
     #compare-boxes-container {
         flex-direction: column; 
         align-items: center;
+        gap: 15px;
     }
 
+    /* Karşılaştırma Kutusu yeniden boyutlandırma (mevcut 600px kuralını geçersiz kılabilir) */
     .compare-box {
-        width: 90%; /* Kutuların mobilin çoğunu kaplamasını sağla */
-        height: 150px; /* Daha kompakt hale getir */
+        width: 90%; 
+        height: 150px; 
+        margin: 0;
     }
     
-    /* D. TABLO TAŞMASI İÇİN KRİTİK AYAR */
-    
-    /* Karşılaştırma sonuçlarını yana kaydırılabilir yap */
-    #compare-results table {
-        /* Bu kural zaten mevcuttu, ancak tekrar kontrol amacıyla ekledim */
-        width: 100%;
-    }
-
+    /* Tablo Taşması için Kritik Ayar */
     #compare-results {
         overflow-x: auto; /* Tablo genişliği taşarsa yatay kaydırma çubuğu göster */
-        -webkit-overflow-scrolling: touch;
+    }
+
+    #compare-results table {
+        /* Mobil görünümde tablonun kaydırılabilmesi için minimum genişlik atayın */
+        min-width: 700px; 
     }
 }
 
 
-/* Çok küçük ekranlar için ek düzenlemeler */
+/* Ekstra küçük ekranlar için ince ayarlar */
 @media (max-width: 480px) {
-    .page-section {
-        padding: 20px 15px;
-    }
-
     .hero-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+    
+    /* Navigasyon linkleri için daha az padding */
+    nav a {
+        padding: 5px 0;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
     }
 }
