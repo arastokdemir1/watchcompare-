@@ -661,7 +661,7 @@ main {
     /* flex-direction: column; SİLİNDİĞİ İÇİN flexbox direkt ortalar */
     justify-content: center; /* Dikeyde ortala */
     align-items: center; /* Yatayda ortala */
-    padding: 10px;
+    padding: 5px;
     
     /* Taşmaları engellemek için */
     overflow: hidden;
@@ -671,8 +671,8 @@ main {
 /* 2. Seçili Kutuya Eklenen Saat Resmi */
 .compare-box.selected img {
     display: block;
-    max-width: 95%;
-    max-height: 90%; /* Kutu yüksekliğinin %90'ını kaplayarak daha büyük görünür */
+    max-width: 100%;
+    max-height: 100%; /* Kutu yüksekliğinin %90'ını kaplayarak daha büyük görünür */
     width: auto;
     height: auto;
     object-fit: contain; 
@@ -707,6 +707,71 @@ main {
     align-items: center;
     padding: 0;
     font-size: 14px; /* 'x' boyutunu ayarlayabilirsiniz */
+}
+
+/* Kutu seçildiğinde silme butonunu görünür yap */
+.compare-box.selected .remove-btn {
+    display: flex; 
+}
+/* ==================================== */
+/* SEÇİLİ SAAT KUTUSU VE BUTON DÜZELTMELERİ (SON VE KESİN DÜZELTMELER) */
+/* ==================================== */
+
+/* 1. Seçili Karşılaştırma Kutusu Ana Stili */
+.compare-box.selected {
+    border: 2px solid var(--primary-color);
+    cursor: default;
+    
+    /* İçeriği (sadece resim ve buton kaldı) dikey ve yatayda mükemmel ortalar */
+    display: flex;
+    justify-content: center; /* Dikeyde ortala */
+    align-items: center; /* Yatayda ortala */
+    padding: 5px; /* KESİN DÜZELTME: Kutunun iç boşluğunu 5px yap */
+    
+    /* Taşmaları engellemek için */
+    overflow: hidden;
+    position: relative; 
+}
+
+/* 2. Seçili Kutuya Eklenen Saat Resmi */
+.compare-box.selected img {
+    display: block;
+    max-width: 100%;  /* KESİN DÜZELTME: Kutunun tamamını kullan */
+    max-height: 100%; /* KESİN DÜZELTME: Kutunun tamamını kullan */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Görüntüyü bozmadan sığdır */
+    margin: 0 !important; /* TÜM DİKEY/YATAY MARJİNLERİ SIFIRLA */
+    z-index: 2;
+}
+
+/* 3. Resmin altındaki saat bilgisi (Metni tamamen gizle) */
+/* Bu kural, metnin tekrar görünmesini sağlayan çakışan tüm kuralları ezmelidir. */
+.watch-info {
+    display: none !important; /* KESİN: Metni tamamen gizle */
+}
+
+/* 4. Silme Butonu ('x') */
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 3; /* En üstte kalması için */
+    
+    /* 'x' işaretini mükemmel ortalamak için */
+    display: none; /* Varsayılan olarak gizli */
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 14px; 
 }
 
 /* Kutu seçildiğinde silme butonunu görünür yap */
