@@ -597,25 +597,6 @@ footer a:hover {
     cursor: pointer;
 }
 
-.watch-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.8); /* Yarı saydam beyaz */
-    z-index: 2;
-    text-align: center;
-    color: var(--text-secondary); /* Koyu yazı rengi */
-}
-.watch-info h4 {
-    margin: 0;
-    color: var(--primary-color);
-}
-.watch-info p {
-    margin: 0;
-    font-size: 0.9em;
-}
 
 /* 1. OVERLAY (Karartma Katmanı) */
 .dropdown-overlay {
@@ -1087,4 +1068,13 @@ main {
 /* Kutu seçildiğinde silme butonunu görünür yap */
 .compare-box.selected .remove-btn {
     display: flex; 
+}
+/* 3. Resmin altındaki saat bilgisi (ÖNCEKİ HATA BURADAYDI) */
+.watch-info {
+    position: relative; /* Statik konumlamaya çevirerek resmin altına iter */
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    color: var(--text-secondary);
+    /* Arka plan ve padding gibi eski kurallarını korur */
 }
