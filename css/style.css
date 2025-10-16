@@ -922,21 +922,21 @@ main {
 /* ================================================= */
 @media (max-width: 768px) {
     
-    /* A. HEADER VE NAVİGASYON DÜZENLEMESİ */
+/* A. HEADER VE NAVİGASYON DÜZENLEMESİ (GÜNCELLENDİ) */
     header {
-        /* Başlık, menü ve dil butonunu tek bir satırda tutmaya çalış */
+        /* Başlık, menü ve dil butonunu artık alt alta, ortalanmış yapıyoruz */
         display: flex;
-        flex-direction: row; 
-        flex-wrap: wrap; /* Sığmazsa alt satıra geçsin */
-        justify-content: space-between; /* Aralarında boşluk bırak */
-        align-items: center;
+        flex-direction: column; /* YENİ: Alt alta diz (Ortalama için kritik) */
+        flex-wrap: wrap; 
+        justify-content: center; /* Ortala */
+        align-items: center; /* Ortala */
         padding: 10px 10px;
         height: auto;
     }
     
     header h1 {
         font-size: 1.2rem; /* Başlığı küçült */
-        margin-bottom: 0;
+        margin-bottom: 5px; /* Başlık ile menü arasına biraz boşluk */
         order: 1; /* İlk sırada yer alsın */
     }
 
@@ -944,10 +944,10 @@ main {
         /* Navigasyon linklerini yan yana, sıkıştırılmış halde diz */
         display: flex;
         flex-direction: row; 
-        justify-content: space-around; 
+        justify-content: center; /* YENİ: Linkleri ortala */
         flex-wrap: wrap; 
-        width: 100%; /* Tam genişliği kapla */
-        order: 3; /* En alta (3. sırada) yer alsın */
+        width: 100%; 
+        order: 3; 
         margin-top: 5px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 5px;
@@ -1010,7 +1010,6 @@ main {
     
     /* İçeriği (resim ve yazı) dikey ve yatayda ortalamak için */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -1028,7 +1027,7 @@ main {
     width: auto;
     height: auto;
     object-fit: contain; 
-    margin: 0 auto 8px auto; /* YENİ: Resmin yatayda otomatik kenar boşluklarıyla ortalanması */
+    margin: 0 !important;
     z-index: 2;
 }
 
@@ -1063,13 +1062,4 @@ main {
 /* Kutu seçildiğinde silme butonunu görünür yap */
 .compare-box.selected .remove-btn {
     display: flex; 
-}
-/* 3. Resmin altındaki saat bilgisi (ÖNCEKİ HATA BURADAYDI) */
-.watch-info {
-    position: relative; /* Statik konumlamaya çevirerek resmin altına iter */
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    color: var(--text-secondary);
-    /* Arka plan ve padding gibi eski kurallarını korur */
 }
