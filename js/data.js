@@ -109,7 +109,7 @@ const watches = [
 
   // --- TISSOT MODELS (10 Pieces) ---
   { 
-    id: "t1", brand: "Tissot", model: "PRX Powermatic 80", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "138g", price: "690€", image: "img/tissot/tissot-prx-powermatic-80.png",
+    id: "t1", brand: "Tissot", model: "PRX Powermatic 80", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "138g", price: "690€", image: "img/tissot-prx-powermatic-80-t137407110410-495e-b.png",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "12mm (Integrated)", is_chronograph: "No", thickness: "10.9mm", movement_calibre: "Powermatic 80.111", jewels: "23", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
