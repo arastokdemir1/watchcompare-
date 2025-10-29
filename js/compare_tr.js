@@ -27,21 +27,22 @@ const features = {
     'movement_calibre': 'Mekanizma Kalibresi',
     'power_reserve': 'Güç Rezervi',
     'frequency_vph': 'Frekans (vph)',
-    'jewels': 'Taş Sayısı',
+    'jewels': 'Jewels',
     
     // KASA VE YAPI ÖZELLİKLERİ
     'case_material': 'Kasa Materyali',
-    'crystal_type': 'Cam Tipi',
-    'waterResistance': 'Su Direnci',
-    'crown_type': 'Kurma Kolu Tipi',
-    'lug_width': 'Kordon Genişliği (Lug)',
+    'crystal_type': 'Kristal Tipi',
+    'waterResistance': 'Suya Dayanıklılık',
+    'crown_type': 'Tepe Tipi',
+    'lug_width': 'Bacak Açıklığı',
     'strap_material': 'Kordon Materyali',
     
     // FONKSİYONLAR
-    'is_chronograph': 'Kronograf (Var/Yok)',
-    'has_date': 'Tarih Penceresi (Var/Yok)',
+    'is_chronograph': 'Kronograf',
+    'has_date': 'Tarih Penceresi',
     'bezel_function': 'Bezel Fonksiyonu',
 };
+
 
 
 // --- GENEL DEĞİŞKENLER VE PANEL YÖNETİMİ ---
