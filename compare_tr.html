@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karşılaştır | Saat Karşılaştırma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+<div id="dropdown-overlay" class="dropdown-overlay"></div>
+
+  <header>
+    <h1>Watch Compare</h1>
+    <a href="compare.html" class="lang-toggle-button">English</a>
+    <nav>
+      <a href="index_tr.html">Anasayfa</a>
+      <a href="compare_tr.html" class="active">Karşılaştır</a>
+      <a href="about_tr.html">Hakkımızda</a>
+      <a href="contact_tr.html">Bize Ulaşın</a>
+      <a href="credits_tr.html">Teşekkürler</a>
+    </nav>
+  </header>
+
+<main>
+    <section id="compare-section" class="page-section">
+        <h2>Saat Karşılaştırma Aracı</h2>
+
+        <div id="compare-boxes-container">
+            <div class="compare-box" data-index="1">
+                <button id="remove-watch-1-btn" class="remove-btn">&times;</button>
+                <button id="select-watch-1-btn" class="select-btn" onclick="panelToggle(1)">+</button>
+            </div>
+
+            <div class="compare-box" data-index="2">
+                <button id="remove-watch-2-btn" class="remove-btn">&times;</button>
+                <button id="select-watch-2-btn" class="select-btn" onclick="panelToggle(2)">+</button>
+            </div>
+
+            <div class="compare-box" data-index="3">
+                <button id="remove-watch-3-btn" class="remove-btn">&times;</button>
+                <button id="select-watch-3-btn" class="select-btn" onclick="panelToggle(3)">+</button>
+            </div>
+
+            <div class="compare-box" data-index="4">
+                <button id="remove-watch-4-btn" class="remove-btn">&times;</button>
+                <button id="select-watch-4-btn" class="select-btn" onclick="panelToggle(4)">+</button>
+            </div>
+        </div>
+        
+        <section id="compare-results">
+            <p id="initial-message" style="text-align: center;">Lütfen karşılaştırmak için en az bir saat seçiniz.</p>
+        </section>
+    </section>
+
+    <div id="dropdown-panel-1" class="dropdown-panel">
+        <div id="marka-listesi-1" class="marka-listesi"></div>
+        <div id="model-listesi-1" class="model-listesi" style="display:none;"></div>
+    </div>
+    <div id="dropdown-panel-2" class="dropdown-panel">
+        <div id="marka-listesi-2" class="marka-listesi"></div>
+        <div id="model-listesi-2" class="model-listesi" style="display:none;"></div>
+    </div>
+    <div id="dropdown-panel-3" class="dropdown-panel">
+        <div id="marka-listesi-3" class="marka-listesi"></div>
+        <div id="model-listesi-3" class="model-listesi" style="display:none;"></div>
+    </div>
+    <div id="dropdown-panel-4" class="dropdown-panel">
+        <div id="marka-listesi-4" class="marka-listesi"></div>
+        <div id="model-listesi-4" class="model-listesi" style="display:none;"></div>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2025 WatchCompare Aras Tokdemir tarafından <a href="https://cizgifikrim.net" target="_blank">Çizgi Fikrim</a> şirketi desteğiyle hazırlanmıştır</p>
+</footer>
+  
+<script src="js/data_tr.js"></script>
+<script src="js/compare_tr.js"></script>
+</body>
+</html>
