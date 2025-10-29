@@ -7,7 +7,7 @@ const blogPosts = [
         author: "Aras Tokdemir",
         date: "29 Ekim 2025",
         tag: "Tavsiye",
-        image: "img/tissot/tissot-prx-powermatic-80-t137407110410-495e-b.png", // Lütfen bu yolu kendi görselinizle güncelleyin
+        image: "img/tissot-prx-powermatic-80-t137407110410-495e-b.png", // Lütfen bu yolu kendi görselinizle güncelleyin
         techMin: "PRX'in 80 saatlik güç rezervi harika, kasa formu ise 70'lerin ruhunu modern bir rahatlıkla taşıyor. Ancak bu saat sadece teknik bir kağıt parçası değil...",
         subjective: "Bana göre PRX, bir 'spor klasik' saatin zirvesidir. Takım elbiseyle gümüş bir yansıması, kot ceketle ise sofistike bir dokunuş katar. Spor saatinizi çıkarıp saklamak yerine, bir Cuma iş çıkışı kokteylinde veya rahat bir Pazar kahvaltısında bileğinizde tutmaya devam edebileceğiniz tek saat budur. Günlük yaşamda 'tek saat' arayan, lüks hissiyatı uygun bütçeyle isteyenler için tek tavsiyemdir.",
         link: "#" 
@@ -29,7 +29,7 @@ const blogPosts = [
         author: "Aras Tokdemir",
         date: "1 Ekim 2025",
         tag: "İnceleme",
-        image: "img/rolex/submariner_no_date.png", // Lütfen bu yolu kendi görselinizle güncelleyin
+        image: "img/submariner_no_date.png", // Lütfen bu yolu kendi görselinizle güncelleyin
         techMin: "Rolex'in kusursuz kalitesi ve kalibresi tartışılmaz. Fakat tarih penceresinin olmaması, Submariner'ı neden bu kadar özel kılıyor?",
         subjective: "Submariner, saatçilik dünyasının 'kültürel taşı'dır. Tarih penceresinin olmaması, kadranı simetrik ve temiz tutarak, saatin zamanı gösterme işlevine odaklanmasını sağlıyor. Bu, zihinsel bir rahatlama sağlar. O bir statü sembolü olabilir ama aynı zamanda günlük hayatın karmaşasında basitliği, mükemmelliği ve sonsuz bir güveni temsil eder. Onu taktığınızda, hayatınızın kontrol altında olduğunu hissedersiniz. Bu paha biçilmez bir histir.",
         link: "#"
