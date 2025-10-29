@@ -29,7 +29,7 @@ const blogPosts = [
         author: "Aras Tokdemir",
         date: "1 Ekim 2025",
         tag: "İnceleme",
-        image: "img/submariner_no_date.png", // Lütfen bu yolu kendi görselinizle güncelleyin
+        image: "img/rolex/submariner_no_date.png", // Lütfen bu yolu kendi görselinizle güncelleyin
         techMin: "Rolex'in kusursuz kalitesi ve kalibresi tartışılmaz. Fakat tarih penceresinin olmaması, Submariner'ı neden bu kadar özel kılıyor?",
         subjective: "Submariner, saatçilik dünyasının 'kültürel taşı'dır. Tarih penceresinin olmaması, kadranı simetrik ve temiz tutarak, saatin zamanı gösterme işlevine odaklanmasını sağlıyor. Bu, zihinsel bir rahatlama sağlar. O bir statü sembolü olabilir ama aynı zamanda günlük hayatın karmaşasında basitliği, mükemmelliği ve sonsuz bir güveni temsil eder. Onu taktığınızda, hayatınızın kontrol altında olduğunu hissedersiniz. Bu paha biçilmez bir histir.",
         link: "#"
