@@ -1,8 +1,9 @@
-// js/compare_tr.js
-// Bu script, compare_tr.html sayfasındaki 4 adet saat seçicisini yönetir,
+// js/compare.js
+
+// Bu script, compare.html sayfasındaki 4 adet saat seçicisini yönetir,
 // markaya göre gruplama yapar ve seçilen saatler için detaylı bir tablo oluşturur.
 
-// NOT: data_tr.js'den gelen watches dizisinin bu script'ten ÖNCE yüklenmiş olması ZORUNLUDUR.
+// data.js'den gelen düz "watches" dizisini, markaya göre gruplandırılmış hiyerarşik bir objeye dönüştürür.
 const saatVerileri = watches.reduce((acc, saat) => {
     const marka = saat.brand;
     if (!acc[marka]) {
@@ -12,7 +13,7 @@ const saatVerileri = watches.reduce((acc, saat) => {
     return acc;
 }, {});
 
-// Karşılaştırma tablosunda gösterilecek özellikler ve TÜRKÇE etiketleri
+// Karşılaştırma tablosunda gösterilecek özellikler ve İNGİLİZCE etiketleri
 const features = {
     // TEMEL ÖZELLİKLER
     'brand': 'Marka',
@@ -44,187 +45,216 @@ const features = {
 };
 
 
+// --- DOM ELEMENTLERİ ve STATE (4 Kutu için Genişletildi) ---
 
-// --- GENEL DEĞİŞKENLER VE PANEL YÖNETİMİ ---
+const panels = [null];
+const markaListeleri = [null];
+const modelListeleri = [null];
+const selectBtns = [null];
+const compareBoxes = [null];
+const removeBtns = [null];
+const dropdownOverlay = document.getElementById('dropdown-overlay'); // Modal arka plan karartma
 
-let activePanelIndex = null;
-const activeWatches = JSON.parse(localStorage.getItem('activeWatches')) || [null, null, null, null];
+for (let i = 1; i <= 4; i++) {
+    const box = document.querySelector(`.compare-box[data-index="${i}"]`); 
+    compareBoxes.push(box);
+    panels.push(document.getElementById(`dropdown-panel-${i}`));
+    markaListeleri.push(document.getElementById(`marka-listesi-${i}`));
+    modelListeleri.push(document.getElementById(`model-listesi-${i}`));
+    selectBtns.push(document.getElementById(`select-watch-${i}-btn`));
+    removeBtns.push(document.getElementById(`remove-watch-${i}-btn`)); 
+}
 
-const dropdownOverlay = document.getElementById('dropdown-overlay');
+const resultsContainer = document.getElementById('compare-results');
+const initialMessage = document.getElementById('initial-message');
+
+let secilenSaatler = [null, null, null, null, null]; 
 
 
-/**
- * Belirtilen paneldeki marka listesini doldurur.
- * @param {number} panelIndex - Hangi panelin güncelleneceği (1-4).
- */
-function fillMarkaListesi(panelIndex) {
-    const markaListesi = document.getElementById(`marka-listesi-${panelIndex}`);
-    markaListesi.innerHTML = '';
+// --- TEMEL İŞLEVLER ---
+
+// Saati Karşılaştırmadan Kaldır
+function saatiKaldir(panelIndex) {
+    secilenSaatler[panelIndex] = null;
     
-    // Marka başlığını ekle (Türkçe)
-    const h3 = document.createElement('h3');
-    h3.textContent = 'Marka Seçiniz:';
-    markaListesi.appendChild(h3);
+    const btn = selectBtns[panelIndex];
+    const box = compareBoxes[panelIndex];
+
+    btn.classList.remove('selected');
+    box.classList.remove('selected'); 
     
-    const brands = Object.keys(saatVerileri).sort();
+    btn.innerHTML = '+';
+
+    removeBtns[panelIndex].style.display = 'none';
+
+    tabloyuOlustur(); 
+    console.log(`Watch ${panelIndex} removed.`);
+}
+
+// Paneli Kapat
+function panelKapat(panelIndex) {
+    if (!panels[panelIndex]) return;
+
+    panels[panelIndex].style.display = 'none';
+    compareBoxes[panelIndex].classList.remove('active'); 
     
-    brands.forEach(marka => {
+    dropdownOverlay.style.display = 'none'; 
+    document.body.classList.remove('modal-open'); 
+
+    // JS ile z-index atamasını kaldırdık. CSS'deki sabit değerlere güveniyoruz.
+}
+
+// Panel Açma/Kapama (Toggle) - Modal yönetimi ve Efekt
+function panelToggle(panelIndex) {
+    const panel = panels[panelIndex];
+    const box = compareBoxes[panelIndex];
+
+    // Açık olan paneli kapat
+    for (let i = 1; i <= 4; i++) {
+        if (i !== panelIndex && panels[i].style.display === 'block') {
+            panelKapat(i);
+        }
+    }
+
+    if (panel.style.display === 'block') {
+        panelKapat(panelIndex);
+    } else {
+        // Paneli aç
+        panel.style.display = 'block';
+        box.classList.add('active'); 
+
+        dropdownOverlay.style.display = 'block'; // Overlay'i göster
+        document.body.classList.add('modal-open'); // Body scroll'unu engelle
+        
+        // Panelin açılışında markaları yükle
+        markalariYukle(panelIndex);
+    }
+}
+
+
+// 1. Markaları Yükleme (Butona basıldığında açılan ilk liste)
+function markalariYukle(panelIndex) {
+    const listContainer = markaListeleri[panelIndex];
+    if (!listContainer) return;
+
+    listContainer.innerHTML = ''; 
+    modelListeleri[panelIndex].style.display = 'none'; 
+    listContainer.style.display = 'block'; 
+
+    Object.keys(saatVerileri).sort().forEach(marka => {
         const markaDiv = document.createElement('div');
         markaDiv.className = 'marka-item';
         markaDiv.textContent = marka;
-        // Marka seçildiğinde bir sonraki adımı çağır
-        markaDiv.onclick = () => selectBrand(panelIndex, marka);
-        markaListesi.appendChild(markaDiv);
+        
+        // Markaya tıklayınca modelleri göster - Hata ayıklama eklendi
+        markaDiv.onclick = (event) => {
+            console.log(`Marka Tıklandı (Panel ${panelIndex}): ${marka}. Model listesi açılıyor...`); 
+            modelleriGoster(marka, panelIndex);
+        };
+        
+        listContainer.appendChild(markaDiv);
     });
 }
 
-/**
- * Marka seçildiğinde model listesini doldurur ve görüntüler.
- * @param {number} panelIndex - Hangi panelin güncelleneceği (1-4).
- * @param {string} brandName - Seçilen markanın adı.
- */
-function selectBrand(panelIndex, brandName) {
-    const markaListesi = document.getElementById(`marka-listesi-${panelIndex}`);
-    const modelListesi = document.getElementById(`model-listesi-${panelIndex}`);
-
-    modelListesi.innerHTML = '';
+// 2. Modelleri Gösterme (Marka tıklandığında açılan model listesi)
+function modelleriGoster(marka, panelIndex) {
+    const modelContainer = modelListeleri[panelIndex];
     
-    // Model başlığını ekle (Türkçe)
-    const h3 = document.createElement('h3');
-    h3.innerHTML = `${brandName} Modelleri: <span class="back-link" onclick="backToMarkaListesi(${panelIndex})">(Geri Dön)</span>`;
-    modelListesi.appendChild(h3);
+    modelContainer.innerHTML = '';
     
-    const models = saatVerileri[brandName] || [];
-
-    models.forEach(saat => {
+    // Geri dönme butonu/başlığı
+    const baslik = document.createElement('div');
+    baslik.className = 'marka-item';
+    baslik.textContent = `< ${marka} (Markalara Geri Dön)`; 
+    baslik.style.fontWeight = 'bold';
+    baslik.onclick = () => markalariYukle(panelIndex); // Marka listesine geri dön
+    modelContainer.appendChild(baslik);
+    
+    // Modelleri listele (Alfabetik sıralama)
+    saatVerileri[marka].sort((a, b) => a.model.localeCompare(b.model)).forEach(saat => {
         const modelDiv = document.createElement('div');
         modelDiv.className = 'model-item';
-        modelDiv.textContent = saat.model;
-        // Modeli seç ve paneli kapat
-        modelDiv.onclick = () => selectWatch(panelIndex, saat.id);
-        modelListesi.appendChild(modelDiv);
+        // HTML yapısı
+        modelDiv.innerHTML = `
+            <img src="${saat.image}" alt="${saat.model}" style="float:left; margin-right: 10px; height:35px; border-radius:3px;">
+            <span style="display: block;">${saat.model}</span>
+            <small style="display: block; color: #666; font-style: italic;">${saat.price}</small>
+            <div style="clear:both;"></div>
+        `;
+        // Modele tıklayınca saati seç
+        modelDiv.onclick = (event) => {
+            console.log(`Model Tıklandı (Panel ${panelIndex}): ${saat.model}. Seçim yapılıyor...`);
+            saatiSec(saat, panelIndex);
+        };
+        
+        modelContainer.appendChild(modelDiv);
     });
-
-    markaListesi.style.display = 'none';
-    modelListesi.style.display = 'block';
-}
-
-/**
- * Model listesinden marka listesine geri döner.
- * @param {number} panelIndex - Hangi panelin geri döneceği (1-4).
- */
-function backToMarkaListesi(panelIndex) {
-    const markaListesi = document.getElementById(`marka-listesi-${panelIndex}`);
-    const modelListesi = document.getElementById(`model-listesi-${panelIndex}`);
-
-    modelListesi.style.display = 'none';
-    markaListesi.style.display = 'block';
-}
-
-
-/**
- * Seçilen saati aktif saatler listesine ekler ve paneli kapatır.
- * @param {number} panelIndex - Hangi slotun güncelleneceği (1-4).
- * @param {string} watchId - Seçilen saatin ID'si.
- */
-function selectWatch(panelIndex, watchId) {
-    const selectedWatch = watches.find(w => w.id === watchId);
     
-    if (selectedWatch) {
-        activeWatches[panelIndex - 1] = selectedWatch;
-        localStorage.setItem('activeWatches', JSON.stringify(activeWatches));
-        updateCompareBox(panelIndex);
-        updateComparisonTable();
-    }
-    kapatPaneli(panelIndex);
+    markaListeleri[panelIndex].style.display = 'none'; 
+    modelContainer.style.display = 'block'; 
 }
 
-/**
- * Karşılaştırma kutusunun içeriğini günceller.
- * @param {number} panelIndex - Hangi kutunun güncelleneceği (1-4).
- */
-function updateCompareBox(panelIndex) {
-    const box = document.querySelector(`.compare-box[data-index="${panelIndex}"]`);
-    const watch = activeWatches[panelIndex - 1];
-    const selectBtn = document.getElementById(`select-watch-${panelIndex}-btn`);
-    const removeBtn = document.getElementById(`remove-watch-${panelIndex}-btn`);
+
+// 3. Saati Seçme (Model tıklandığında)
+function saatiSec(saat, panelIndex) {
+    secilenSaatler[panelIndex] = saat;
+    panelKapat(panelIndex); // Seçim yapıldıktan sonra paneli kapat
+
+    const btn = selectBtns[panelIndex];
+    const box = compareBoxes[panelIndex];
     
-    if (watch) {
-        // Saat seçili
-        box.classList.add('selected');
-        
-        // Kutunun içeriğini saat görseli ve adı ile doldur
-        box.innerHTML = `
-            <button id="remove-watch-${panelIndex}-btn" class="remove-btn" onclick="removeWatch(${panelIndex})">&times;</button>
-            <img src="${watch.image}" alt="${watch.brand} ${watch.model}" class="watch-image">
-            <div class="watch-info">
-                <p class="watch-brand">${watch.brand}</p>
-                <p class="watch-model">${watch.model}</p>
-            </div>
-            <button id="select-watch-${panelIndex}-btn" class="select-btn select-btn-update" onclick="panelToggle(${panelIndex})">DEĞİŞTİR</button>
-        `;
-        
-    } else {
-        // Saat seçili değil
-        box.classList.remove('selected');
-        
-        // Kutunun içeriğini varsayılan butonlarla doldur (Türkçe)
-        box.innerHTML = `
-            <button id="remove-watch-${panelIndex}-btn" class="remove-btn" style="display: none;">&times;</button>
-            <button id="select-watch-${panelIndex}-btn" class="select-btn" onclick="panelToggle(${panelIndex})">+</button>
-        `;
-    }
+    // Buton içeriğini güncelle
+    btn.classList.add('selected');
+    box.classList.add('selected'); 
+
+    btn.innerHTML = `
+        <img src="${saat.image}" alt="${saat.model}">
+        <span style="display:block; margin-top: 5px;">${saat.model}</span>
+        <small style="color:#777;">${saat.brand}</small>
+    `;
+
+    // X butonunu göster
+    removeBtns[panelIndex].style.display = 'flex'; 
+
+    tabloyuOlustur();
 }
 
 
-/**
- * Seçilen saati listeden kaldırır.
- * @param {number} panelIndex - Hangi slotun kaldırılacağı (1-4).
- */
-function removeWatch(panelIndex) {
-    activeWatches[panelIndex - 1] = null;
-    localStorage.setItem('activeWatches', JSON.stringify(activeWatches));
-    updateCompareBox(panelIndex);
-    updateComparisonTable();
-}
+// 4. Karşılaştırma Tablosunu Oluşturma/Güncelleme
+function tabloyuOlustur() {
+    const filledWatches = secilenSaatler.filter(s => s !== null);
 
-
-/**
- * Karşılaştırma tablosunu günceller.
- */
-function updateComparisonTable() {
-    const resultsContainer = document.getElementById('compare-results');
-    
-    // Aktif saatleri filtrele (null olmayanları al)
-    const validWatches = activeWatches.filter(w => w !== null);
-
-    // Başlangıç mesajını Türkçe yap:
-    if (validWatches.length === 0) {
-        resultsContainer.innerHTML = `<p id="initial-message" style="text-align: center;">Lütfen karşılaştırmak için en az bir saat seçiniz.</p>`;
+    if (filledWatches.length < 1) {
+        initialMessage.style.display = 'block';
+        resultsContainer.innerHTML = '';
         return;
     }
 
-    // Tabloyu oluşturma
-    let tableHTML = '<table><thead><tr><th></th>';
-    validWatches.forEach(watch => {
-        tableHTML += `<th>${watch.brand} ${watch.model}</th>`;
+    initialMessage.style.display = 'none';
+
+    let tableHTML = '<table><thead><tr><th>Feature</th>';
+    
+    filledWatches.forEach(watch => {
+        tableHTML += `<th>${watch.brand} <br> ${watch.model}</th>`;
     });
     tableHTML += '</tr></thead><tbody>';
 
-    // Özellik satırları döngüsü:
     for (const key in features) {
-        if (!features.hasOwnProperty(key)) continue;
+        const hasValue = filledWatches.some(w => 
+            w.hasOwnProperty(key) && w[key] !== null && w[key] !== '' && typeof w[key] !== 'undefined'
+        );
+        if (!hasValue) { 
+            continue; 
+        }
 
-        const featureLabel = features[key]; // features objesi artık Türkçe etiketleri içeriyor
-        
-        let row = `<tr><td><strong>${featureLabel}</strong></td>`;
-        
-        validWatches.forEach(watch => {
+        let row = '<tr>';
+        const featureName = features[key]; 
+        row += `<td class="feature-name" style="font-weight:bold;">${featureName}</td>`; 
+
+        filledWatches.forEach(watch => {
             let value = watch[key]; 
-            
-            // Veri formatlama ve ÇEVİRİ
-            if (value === true) value = 'Var';
-            else if (value === false) value = 'Yok';
+            if (value === true) value = 'Yes';
+            else if (value === false) value = 'No';
             else if (value === null || value === '' || typeof value === 'undefined') value = '-';
             
             row += `<td>${value}</td>`;
@@ -238,66 +268,20 @@ function updateComparisonTable() {
     resultsContainer.innerHTML = tableHTML;
 }
 
-/**
- * Dropdown paneli açıp/kapatır ve içeriğini doldurur.
- * @param {number} panelIndex - Hangi panelin açılıp kapatılacağı (1-4).
- */
-function panelToggle(panelIndex) {
-    const panel = document.getElementById(`dropdown-panel-${panelIndex}`);
-    const isActive = panel.classList.contains('active');
-
-    // Açık olan paneli kapat (varsa)
-    if (activePanelIndex !== null) {
-        kapatPaneli(activePanelIndex);
-    }
-    
-    if (!isActive) {
-        // Paneli aç
-        panel.classList.add('active');
-        dropdownOverlay.classList.add('active');
-        activePanelIndex = panelIndex;
-        
-        // Marka listesini doldur
-        fillMarkaListesi(panelIndex);
-        
-        // Başlangıçta marka listesini göster
-        document.getElementById(`marka-listesi-${panelIndex}`).style.display = 'block';
-        document.getElementById(`model-listesi-${panelIndex}`).style.display = 'none';
-
-        // Seçilen kutunun altına konumlandır (CSS'de halledilebilir ancak JS ile de pozisyon ayarlanabilir)
-        // Bu kısım CSS ile yapıldığı varsayılırsa boş kalır.
-        
-    } else {
-        // Paneli kapat
-        kapatPaneli(panelIndex);
-    }
-}
-
-
-/**
- * Dropdown paneli kapatır ve overlay'i kaldırır.
- * @param {number} panelIndex - Kapatılacak panelin indeksi (1-4).
- */
-function kapatPaneli(panelIndex) {
-    const panel = document.getElementById(`dropdown-panel-${panelIndex}`);
-    if (panel) {
-        panel.classList.remove('active');
-    }
-    dropdownOverlay.classList.remove('active');
-    activePanelIndex = null;
-}
-
 
 // --- BAŞLANGIÇ VE OLAY DİNLEYİCİLERİ ---
 
-/**
- * Sayfa yüklendiğinde çalışacak ana başlatma fonksiyonu.
- * Bu fonksiyon çağrılmadığı için saatler yüklenmiyordu.
- */
 function initComparePage() {
-    // Tüm slotları başlangıç durumuna getir
     for (let i = 1; i <= 4; i++) {
-        updateCompareBox(i); 
+        if (selectBtns[i]) {
+            // compare.html'deki onclick="panelToggle(i)" kullanıldığı için burada tekrar atamaya gerek yok.
+            selectBtns[i].innerHTML = '+';
+        }
+        // Kaldırma butonuna işlevi ekle ve başlangıçta gizle
+        if (removeBtns[i]) {
+            removeBtns[i].onclick = () => saatiKaldir(i);
+            removeBtns[i].style.display = 'none'; 
+        }
     }
     
     // Overlay'e tıklandığında paneli kapatma işlevi 
@@ -305,14 +289,16 @@ function initComparePage() {
          // Tıklamanın sadece overlay'de gerçekleştiğinden emin olmak için
          if (event.target !== dropdownOverlay) return;
          
-         // Açık olan aktif paneli kapat
-         kapatPaneli(activePanelIndex);
+         // Açık olan paneli bul ve kapat
+        for (let i = 1; i <= 4; i++) {
+            if (panels[i].style.display === 'block') {
+                panelKapat(i);
+                return; 
+            }
+        }
     };
-    
-    // İlk yüklemede tabloyu boş olarak güncelle (başlangıç mesajı görünür)
-    updateComparisonTable(); 
+
+    tabloyuOlustur();
 }
 
-
-// Sayfa yüklendiğinde başlatma fonksiyonunu çalıştır
-window.addEventListener("DOMContentLoaded", initComparePage);
+initComparePage();
