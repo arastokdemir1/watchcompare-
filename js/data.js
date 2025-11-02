@@ -2,7 +2,7 @@
 
 const brands = [
   {
-    name: "Seiko",
+    name: "Seiko", 
     history: "Seiko was founded in Tokyo in 1881 and produced the world's first quartz watch in 1969.",
     brandImage: "img/seiko-logo-png-transparent.png"
   },
