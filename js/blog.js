@@ -48,7 +48,7 @@ function generateBlogCards() {
     blogPosts.forEach(post => {
         // Disable the button if the link is '#'
         const disabledClass = post.link === '#' ? 'disabled' : '';
-        const linkText = post.link === '#' ? 'Coming Soon' : 'Read Full Review →';
+        const linkText = post.link === '#' ? '' : '';
 
         htmlContent += `
             <article class="blog-post-card">
