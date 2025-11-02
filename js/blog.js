@@ -8,7 +8,7 @@ const blogPosts = [
         date: "October 29, 2025",
         tag: "Recommendation",
         // Please update the image path:
-        image: "img/tissot/tissot-prx-powermatic-80-t137407110410-495e-b.png", 
+        image: "img/tissot-prx-powermatic-80-t137407110410-495e-b.png", 
         techMin: "The PRX's 80-hour power reserve is fantastic, and its case shape carries the spirit of the 70s with a modern comfort. However, this watch is more than just a piece of technical paper...",
         subjective: "In my opinion, the PRX is the peak of a 'sport-classic' watch. It adds a silver reflection with a suit and a sophisticated touch with a denim jacket. This is the one watch you can keep on your wrist during a Friday evening cocktail or a relaxed Sunday brunch, instead of putting your sports watch away. It is my only recommendation for those looking for a 'one watch' solution in daily life, who want a luxurious feel on a reasonable budget.",
         link: "#" 
@@ -32,7 +32,7 @@ const blogPosts = [
         date: "October 1, 2025",
         tag: "Review",
         // Please update the image path:
-        image: "images/rolex_sub_example.jpg", 
+        image: "img/submariner_no_date.png", 
         techMin: "Rolex's flawless quality and caliber are undisputed. But what makes the absence of the date window so special on the Submariner?",
         subjective: "The Submariner is the 'cultural cornerstone' of the watch world. The lack of a date window keeps the dial symmetrical and clean, allowing the watch to focus purely on its time-telling function. This offers mental relief. It might be a status symbol, but it also represents simplicity, perfection, and eternal confidence in the chaos of daily life. When you wear it, you feel that your life is under control. That is an invaluable feeling.",
         link: "#"
