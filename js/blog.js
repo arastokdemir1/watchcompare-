@@ -20,7 +20,7 @@ const blogPosts = [
         date: "October 15, 2025",
         tag: "Nostalgia",
         // Please update the image path:
-        image: "images/seiko_skx_example.jpg", 
+        image: "https://www.abtsaat.com/ProductImages/98634/big/skx007j-4.jpg", 
         techMin: "Does it matter that the SKX is a bit bulkier than modern movements or lacks hacking seconds? No, because the SKX has a character more than a movement...",
         subjective: "This watch carries the scent of a 'true' adventure. Even though it's no longer in production, wearing it makes you feel like an ocean explorer or a former war pilot, not just an office worker. You can create endless variations by changing its strap; this means the watch is your personal canvas. The SKX is not a trend; it's a story to be passed down through generations.",
         link: "#"
@@ -32,7 +32,7 @@ const blogPosts = [
         date: "October 1, 2025",
         tag: "Review",
         // Please update the image path:
-        image: "img/submariner_no_date.png", 
+        image: "img/rolex/submariner_no_date.png", 
         techMin: "Rolex's flawless quality and caliber are undisputed. But what makes the absence of the date window so special on the Submariner?",
         subjective: "The Submariner is the 'cultural cornerstone' of the watch world. The lack of a date window keeps the dial symmetrical and clean, allowing the watch to focus purely on its time-telling function. This offers mental relief. It might be a status symbol, but it also represents simplicity, perfection, and eternal confidence in the chaos of daily life. When you wear it, you feel that your life is under control. That is an invaluable feeling.",
         link: "#"
