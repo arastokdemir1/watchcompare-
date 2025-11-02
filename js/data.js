@@ -44,7 +44,7 @@ const brands = [
   {
     name: "Orient",
     history: "Founded in Japan in the 1950s, Orient offers durable and affordable mechanical watches. Classic designs like the Bambino are popular.",
-    brandImage: "img/images_1.png"
+    brandImage: "https://logowik.com/content/uploads/images/318_orient.jpg"
   },
   {
     name: "Longines",
