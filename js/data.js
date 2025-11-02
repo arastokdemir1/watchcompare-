@@ -7,7 +7,7 @@ const brands = [
     brandImage: "img/seiko-logo-png-transparent.png"
   },
   {
-    name: "Tissot",
+    name: "Tissot", 
     history: "Founded in Switzerland in 1853, Tissot is known for its quality mechanical and quartz watches.",
     brandImage: "img/tissot-1-logo-png-transparent_1.png"
   },
