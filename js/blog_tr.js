@@ -18,7 +18,7 @@ const blogPosts = [
         author: "WatchCompare Editör",
         date: "15 Ekim 2025",
         tag: "Nostalji",
-        image: "img/seiko/seiko_skx_example.jpg", // Lütfen bu yolu kendi görselinizle güncelleyin
+        image: "https://www.abtsaat.com/ProductImages/98634/big/skx007j-4.jpg", // Lütfen bu yolu kendi görselinizle güncelleyin
         techMin: "SKX'in güncel mekanizmalara göre biraz hantal kalması veya saniye durdurma özelliğinin olmaması önemli mi? Hayır, çünkü SKX bir saatten çok bir karaktere sahip...",
         subjective: "Bu saat, 'gerçek' bir maceranın kokusunu taşıyor. Her ne kadar artık üretilmese de, bileğinizde taşıdığınızda size bir ofis çalışanı değil de, okyanus kaşifi veya eski bir savaş pilotu hissi veriyor. Kordonunu değiştirerek sonsuz varyasyon yaratabilirsiniz; bu, saatin sizin kişisel tuvaliniz olması demektir. SKX bir trend değil, nesilden nesile aktarılacak bir hikayedir.",
         link: "#"
