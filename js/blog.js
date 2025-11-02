@@ -5,7 +5,7 @@ const blogPosts = [
         id: 1,
         title: "Tissot PRX Powermatic 80: The Swiss Army Knife of Elegance",
         author: "Aras Tokdemir",
-        date: "October 29, 2025",
+        date: "October 29, 2025", 
         tag: "Recommendation",
         // Please update the image path:
         image: "img/tissot-prx-powermatic-80-t137407110410-495e-b.png", 
