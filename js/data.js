@@ -148,6 +148,10 @@ const watches = [
     id: "t10", brand: "Tissot", model: "Sideral S Powermatic 80", movement: "Automatic", diameter: "41mm", waterResistance: "300m", weight: "60g", price: "900€", image: "img/tissot/sideral.png",
     case_material: "Forged Carbon", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "20mm", is_chronograph: "No", thickness: "14.4mm", movement_calibre: "Powermatic 80.111", jewels: "23", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Rubber", has_date: "Yes", bezel_function: "Diver's (Unidirectional)"
   },
+  { 
+    id: "t11", brand: "Tissot", model: "PRX Automatic Chronograph", movement: "Automatic", diameter: "42mm", waterResistance: "100m", weight: "184g", price: "2000€", image: "img/tissot-prx-otomatik-kronograf-t137.427.11.091.00-erkek-kol-saati-1.png",
+    case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "60 hours", lug_width: "12mm (Integrated)", is_chronograph: "Yes", thickness: "14.5mm", movement_calibre: "Valjoux A05.H31", jewels: "27", frequency_vph: "28800", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Fixed"
+  },
 
   // --- CASIO MODELS (10 Pieces) ---
   { 
