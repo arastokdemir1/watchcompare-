@@ -44,7 +44,7 @@ const brands = [
   {
     name: "Orient",
     history: "1950'lerde Japonya'da kurulan Orient, dayanıklı ve uygun fiyatlı mekanik saatler sunar. Bambino gibi klasik tasarımları popülerdir.", // TÜRKÇE ÇEVİRİ
-    brandImage: "img/logo/images_1.png"
+    brandImage: "https://logowik.com/content/uploads/images/318_orient.jpg"
   },
   {
     name: "Longines",
