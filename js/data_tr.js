@@ -6,7 +6,7 @@ const brands = [
     history: "Seiko, 1881 yılında Tokyo'da kuruldu ve 1969'da dünyanın ilk kuvars saatini üreterek saatçilikte devrim yarattı.", // TÜRKÇE ÇEVİRİ
     brandImage: "img/logo/seiko-logo-png-transparent.png"
   },
-  {
+  { 
     name: "Tissot",
     history: "1853 yılında İsviçre'de kurulan Tissot, kaliteli mekanik ve kuvars saatleriyle tanınır. Uygun fiyatlı İsviçre yapımı saat pazarının lideridir.", // TÜRKÇE ÇEVİRİ
     brandImage: "img/logo/tissot-1-logo-png-transparent_1.png"
