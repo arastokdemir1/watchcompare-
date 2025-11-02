@@ -166,6 +166,10 @@ const watches = [
     id: "t10", brand: "Tissot", model: "Ballade Powermatic 80 COSC", movement: "Otomatik (COSC)", diameter: "41mm", waterResistance: "50m", weight: "150g", price: "990€", image: "img/tissot/ballade.png",
     case_material: "Paslanmaz Çelik", crystal_type: "Safir", power_reserve: "80 Saat", lug_width: "20mm", is_chronograph: "No", thickness: "10.4mm", movement_calibre: "Powermatic 80.811 COSC", jewels: "25", frequency_vph: "21600", crown_type: "Çek/Bırak", strap_material: "Çelik Bilezik", has_date: "Var", bezel_function: "Sabit"
   },
+  { 
+    id: "t11", brand: "Tissot", model: "PRX Automatic Chronograph", movement: "Otomatik", diameter: "42mm", waterResistance: "100m", weight: "184g", price: "2000€", image: "img/tissot/tissot-prx-otomatik-kronograf-t137.427.11.091.00-erkek-kol-saati-1.png",
+    case_material: "Paslanmaz Çelik", crystal_type: "Safir", power_reserve: "60 Saat", lug_width: "12mm (Entegre)", is_chronograph: "Evet", thickness: "14.5mm", movement_calibre: "Valjoux A05.H31", jewels: "27", frequency_vph: "28800", crown_type: "Çek/Bırak", strap_material: "Çelik Bilezik", has_date: "Var", bezel_function: "Sabit"
+  },
 
   // --- CASIO MODELS (10 Pieces) ---
   { 
