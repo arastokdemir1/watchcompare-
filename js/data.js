@@ -353,15 +353,15 @@ const watches = [
 
   // --- TAG HEUER MODELS (3 Items) ---
   { 
-    id: "th1", brand: "TAG Heuer", model: "Carrera Calibre 16 Chrono", movement: "Automatic Chronograph", diameter: "41mm", waterResistance: "100m", weight: "155g", price: "4000€", image: "img/tagheuer/carrera.png",
+    id: "th1", brand: "TAG Heuer", model: "Carrera Calibre 16 Chrono", movement: "Automatic Chronograph", diameter: "41mm", waterResistance: "100m", weight: "155g", price: "4000€", image: "https://img.chrono24.com/images/uhren/43107501-ldghh89qgu8d83lymuymjanm-ExtraLarge.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "42 hours", lug_width: "20mm", is_chronograph: "Yes", thickness: "16mm", movement_calibre: "Calibre 16 (ETA 7750 tabanlı)", jewels: "25", frequency_vph: "28800", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Tachymeter"
   },
   { 
-    id: "th2", brand: "TAG Heuer", model: "Monaco Calibre 11", movement: "Automatic Chronograph", diameter: "39x39mm", waterResistance: "100m", weight: "110g", price: "6500€", image: "img/tagheuer/monaco.png",
+    id: "th2", brand: "TAG Heuer", model: "Monaco Calibre 11", movement: "Automatic Chronograph", diameter: "39x39mm", waterResistance: "100m", weight: "110g", price: "6500€", image: "https://img.thehourglass.com/tachyon/2024/01/Tag-Heuer_CBL2111.FC6453_1-1.png",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "40 hours", lug_width: "22mm", is_chronograph: "Yes", thickness: "14mm", movement_calibre: "Calibre 11", jewels: "59", frequency_vph: "28800", crown_type: "Push/Pull (Left Side)", strap_material: "Leather", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "th3", brand: "TAG Heuer", model: "Aquaracer Professional 300", movement: "Automatic", diameter: "43mm", waterResistance: "300m", weight: "175g", price: "3500€", image: "img/tagheuer/aquaracer.png",
+    id: "th3", brand: "TAG Heuer", model: "Aquaracer Professional 300", movement: "Automatic", diameter: "43mm", waterResistance: "300m", weight: "175g", price: "3500€", image: "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/52411/uploads/urunresimleri/buyuk/tag-heuer-wbp5114--4718-.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "38 hours", lug_width: "22mm", is_chronograph: "No", thickness: "12mm", movement_calibre: "Calibre 5 (ETA 2824 tabanlı)", jewels: "25", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Diver (Unidirectional)"
   }
 ]; 
