@@ -86,7 +86,7 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "Solar (6 months)", lug_width: "20mm", is_chronograph: "Yes", thickness: "13.3mm", movement_calibre: "V192", jewels: "N/A", frequency_vph: "N/A", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Tachymeter"
   },
   { 
-    id: "s6", brand: "Seiko", model: "Prospex Turtle SRPE93 (PADI)", movement: "Automatic", diameter: "45mm", waterResistance: "200m", weight: "195g", price: "450€", image: "img/seiko/turtle.png",
+    id: "s6", brand: "Seiko", model: "Prospex Turtle SRPE93 (PADI)", movement: "Automatic", diameter: "45mm", waterResistance: "200m", weight: "195g", price: "450€", image: "https://www.abtsaat.com/productimages/100925/original/seiko-srpe93k-prospex-turtle-erkek-kol-saati-1.png",
     case_material: "Stainless Steel", crystal_type: "Hardlex", power_reserve: "41 hours", lug_width: "22mm", is_chronograph: "No", thickness: "13.4mm", movement_calibre: "4R36", jewels: "24", frequency_vph: "21600", crown_type: "Screw-down", strap_material: "Silicone", has_date: "Yes", bezel_function: "Diver's (Unidirectional)"
   },
   { 
@@ -94,11 +94,11 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "70 hours", lug_width: "20mm", is_chronograph: "No", thickness: "13.2mm", movement_calibre: "6R35", jewels: "24", frequency_vph: "21600", crown_type: "Screw-down", strap_material: "Leather", has_date: "Yes", bezel_function: "Compass (Inner)"
   },
   { 
-    id: "s8", brand: "Seiko", model: "Prospex Marine Master SBDX023", movement: "Automatic (Hi-Beat)", diameter: "44mm", waterResistance: "300m", weight: "209g", price: "3000€", image: "img/seiko/marinemaster.png",
+    id: "s8", brand: "Seiko", model: "Prospex Marine Master SBDX023", movement: "Automatic (Hi-Beat)", diameter: "44mm", waterResistance: "300m", weight: "209g", price: "3000€", image: "https://img.chrono24.com/images/uhren/43308238-iy07qyg8n65xsdff5osa3vb1-ExtraLarge.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "50 hours", lug_width: "20mm", is_chronograph: "No", thickness: "15.4mm", movement_calibre: "8L35", jewels: "26", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Diver's (Unidirectional)"
   },
   { 
-    id: "s9", brand: "Seiko", model: "5 Sports SKX Style SRPE55K1", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "140g", price: "300€", image: "img/seiko/srpe.png",
+    id: "s9", brand: "Seiko", model: "5 Sports SKX Style SRPE55K1", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "140g", price: "300€", image: "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/52411/uploads/urunresimleri/buyuk/seiko-5-srpe55k-otomatik-erkek-kol-saa-9cbaed..jpg",
     case_material: "Stainless Steel", crystal_type: "Hardlex", power_reserve: "41 hours", lug_width: "20mm", is_chronograph: "No", thickness: "11.5mm", movement_calibre: "4R36", jewels: "24", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
