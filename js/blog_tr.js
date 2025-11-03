@@ -41,7 +41,7 @@ const blogPosts = [
         date: "3 Kasım 2025",
         tag: "Askeri",
         // Lütfen görsel yolunu güncelleyin:
-        image: "img/hamilton/hamilton-khaki-field-h69439931-example.png", 
+        image: "https://www.abtsaat.com/productimages/100582/original/hamilton-h69439931-khaki-field-mechanical-erkek-kol-saati-221.png", 
         techMin: "Hafif, 38 mm çaplı kasa ve 80 saatlik Powermatic rezervine sahip mekanik kurmalı kalibre, onu klasik bir askeri saatten modern bir günlük saate taşıyor.",
         subjective: "Bu saati kolunuza taktığınızda, sade, mütevazı ama görev bilinciyle dolu bir karakter hissine kapılırsınız. Parlak ciladan uzak, mat ve keskin hatlara sahiptir. Ofiste veya doğada, sizi odaklanmaya ve 'anlık' olmaya iter (çünkü kurmanız gerekir). Deri bir NATO kayışıyla giyim tarzınızı tamamen değiştirebilecek, gerçek bir saat tutkunu seçimidir.",
         link: "#"
@@ -53,7 +53,7 @@ const blogPosts = [
         date: "20 Ekim 2025",
         tag: "Klasik",
         // Lütfen görsel yolunu güncelleyin:
-        image: "img/omega/omega-speedmaster-professional-example.jpg", 
+        image: "https://static.ticimax.cloud/45295/uploads/urunresimleri/buyuk/omega-310.30.42.50.01-df3dc6.jpg", 
         techMin: "Efsanevi manuel kurmalı kalibre, 1861/3861 (hesap fark etmeksizin), onu 'Ay'a giden saat' yapan şeydir. Su geçirmezlik değeri, dalgıç saatlerine göre mütevazıdır.",
         subjective: "Speedmaster, saatçilikten çok bir tarih dersidir. Kronografı çalıştırdığınızda hissedilen mekanik titreşim, size zamanda yolculuk yaptırır. Bu bir saatten çok bir miras, bir semboldür. Onu takmak, kıyafetinizin değil, hikayenizin bir parçasıdır. Her zaman özel bir durum yaratır.",
         link: "#"
@@ -65,7 +65,7 @@ const blogPosts = [
         date: "28 Eylül 2025",
         tag: "Bütçe",
         // Lütfen görsel yolunu güncelleyin:
-        image: "img/orient/orient-bambino-ra-ac0009s10b-example.png", 
+        image: "https://www.aslansaat.com/orient-otomatik-erkek-kol-saati-fac00009n0-1834-bambino-12073-18-B.jpg", 
         techMin: "Çoğu modelde Japon in-house mekanizma (F6724) bulunur. Ancak teknik özelliklerden çok, bombeli camı ve zarif kadranı, onu bir 'Dress Watch' klasiği yapar.",
         subjective: "Bambino'nun bombeli kristali, ışığı yakalama şekli ve zarif ibreleri, ona 10 kat daha pahalı saatlerin estetiğini kazandırır. Bu saat, ilk iş görüşmeniz, düğününüz veya resmi bir etkinliğiniz için mükemmel bir seçimdir. Takım elbisenizle veya blazer ceketinizle harika durur. Bu saati, ucuz fiyata satılan yüksek kaliteli bir vintage rüyası olarak görmelisiniz.",
         link: "#"
