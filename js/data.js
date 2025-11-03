@@ -311,15 +311,15 @@ const watches = [
 
   // --- PATEK PHILIPPE MODELS (3 Items) ---
   { 
-    id: "pp1", brand: "Patek Philippe", model: "Nautilus 5711/1A", movement: "Automatic", diameter: "40mm", waterResistance: "120m", weight: "125g", price: "30000€", image: "img/pp/nautilus.png",
+    id: "pp1", brand: "Patek Philippe", model: "Nautilus 5711/1A", movement: "Automatic", diameter: "40mm", waterResistance: "120m", weight: "125g", price: "30000€", image: "https://img.chrono24.com/images/uhren/19810338-yl6o1sj66r3ht59crk6kiwzx-ExtraLarge.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "45 hours", lug_width: "Integrated", is_chronograph: "No", thickness: "8.3mm", movement_calibre: "Calibre 26-330 S C", jewels: "29", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Integrated Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "pp2", brand: "Patek Philippe", model: "Calatrava 6119R", movement: "Manual-Winding", diameter: "39mm", waterResistance: "30m", weight: "80g", price: "28000€", image: "img/pp/calatrava.png",
+    id: "pp2", brand: "Patek Philippe", model: "Calatrava 6119R", movement: "Manual-Winding", diameter: "39mm", waterResistance: "30m", weight: "80g", price: "28000€", image: "https://img.chrono24.com/images/uhren/20148972-4qxi2s8ym51s7y5fx81xkbvq-ExtraLarge.jpg",
     case_material: "Rose Gold", crystal_type: "Sapphire", power_reserve: "65 hours", lug_width: "20mm", is_chronograph: "No", thickness: "8.08mm", movement_calibre: "Calibre 30-255 PS", jewels: "27", frequency_vph: "28800", crown_type: "Push/Pull", strap_material: "Leather", has_date: "No", bezel_function: "Fixed"
   },
   { 
-    id: "pp3", brand: "Patek Philippe", model: "Aquanaut Travel Time 5164A", movement: "Automatic (GMT)", diameter: "40.8mm", waterResistance: "120m", weight: "100g", price: "45000€", image: "img/pp/aquanaut.png",
+    id: "pp3", brand: "Patek Philippe", model: "Aquanaut Travel Time 5164A", movement: "Automatic (GMT)", diameter: "40.8mm", waterResistance: "120m", weight: "100g", price: "45000€", image: "https://img.chrono24.com/images/uhren/34865623-587hkms7gfaxnfu1nwi6pmp6-ExtraLarge.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "45 hours", lug_width: "Integrated", is_chronograph: "No", thickness: "10.2mm", movement_calibre: "Calibre 324 S C FUS", jewels: "29", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Rubber", has_date: "Yes", bezel_function: "Fixed"
   },
 
@@ -343,11 +343,11 @@ const watches = [
 
   // --- ORIENT MODELS (2 Items) ---
   { 
-    id: "or1", brand: "Orient", model: "Bambino (Gen 2 V3)", movement: "Automatic", diameter: "40.5mm", waterResistance: "30m", weight: "65g", price: "250€", image: "img/orient/bambino.png",
+    id: "or1", brand: "Orient", model: "Bambino (Gen 2 V3)", movement: "Automatic", diameter: "40.5mm", waterResistance: "30m", weight: "65g", price: "250€", image: "https://images.jamtangan.com/preset:sharp/resize:fit:462:492/dpr:1.5/width:462/height:492/resize:fit/plain/https://assets.jamtangan.com/images/product/orient/TAC00007W/1l_800x800.jpg",
     case_material: "Stainless Steel", crystal_type: "Mineral (Domed)", power_reserve: "40 hours", lug_width: "21mm", is_chronograph: "No", thickness: "11.8mm", movement_calibre: "F6724", jewels: "22", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "or2", brand: "Orient", model: "Kamasu AA0004E19B", movement: "Automatic", diameter: "41.8mm", waterResistance: "200m", weight: "175g", price: "350€", image: "img/orient/kamasu.png",
+    id: "or2", brand: "Orient", model: "Kamasu AA0004E19B", movement: "Automatic", diameter: "41.8mm", waterResistance: "200m", weight: "175g", price: "350€", image: "https://tempusshop.com/cdn/shop/files/RA-AA0001B19B_1_1024x1024.jpg?v=1753105668",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "40 hours", lug_width: "22mm", is_chronograph: "No", thickness: "12.8mm", movement_calibre: "F6922", jewels: "22", frequency_vph: "21600", crown_type: "Screw-down", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Diver (Unidirectional)"
   },
 
