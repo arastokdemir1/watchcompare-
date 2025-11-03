@@ -32,7 +32,7 @@ const blogPosts = [
         date: "October 1, 2025",
         tag: "Review",
         // Please update the image path:
-        image: "img/rolex/rolex_sub_example.jpg", 
+        image: "img/rolex/submariner_no_date.png", 
         techMin: "Rolex's flawless quality and caliber are undisputed. But what makes the absence of the date window so special on the Submariner?",
         subjective: "The Submariner is the 'cultural cornerstone' of the watch world. The lack of a date window keeps the dial symmetrical and clean, allowing the watch to focus purely on its time-telling function. This offers mental relief. It might be a status symbol, but it also represents simplicity, perfection, and eternal confidence in the chaos of daily life. When you wear it, you feel that your life is under control. That is an invaluable feeling.",
         link: "#"
