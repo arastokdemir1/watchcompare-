@@ -315,7 +315,7 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "45 hours", lug_width: "Integrated", is_chronograph: "No", thickness: "8.3mm", movement_calibre: "Calibre 26-330 S C", jewels: "29", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Integrated Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "pp2", brand: "Patek Philippe", model: "Calatrava 6119R", movement: "Manual-Winding", diameter: "39mm", waterResistance: "30m", weight: "80g", price: "28000€", image: "https://img.chrono24.com/images/uhren/20148972-4qxi2s8ym51s7y5fx81xkbvq-ExtraLarge.jpg",
+    id: "pp2", brand: "Patek Philippe", model: "Calatrava 6119R", movement: "Manual-Winding", diameter: "39mm", waterResistance: "30m", weight: "80g", price: "28000€", image: "https://static.patek.com/images/articles/face_white/350/5227J_001_1.jpg",
     case_material: "Rose Gold", crystal_type: "Sapphire", power_reserve: "65 hours", lug_width: "20mm", is_chronograph: "No", thickness: "8.08mm", movement_calibre: "Calibre 30-255 PS", jewels: "27", frequency_vph: "28800", crown_type: "Push/Pull", strap_material: "Leather", has_date: "No", bezel_function: "Fixed"
   },
   { 
