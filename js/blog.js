@@ -47,7 +47,7 @@ const blogPosts = [
         date: "November 3, 2025",
         tag: "Military",
         // Lütfen görsel yolunu güncelleyin:
-        image: "img/hamilton/hamilton-khaki-field-h69439931-example.png", 
+        image: "https://www.abtsaat.com/productimages/100582/original/hamilton-h69439931-khaki-field-mechanical-erkek-kol-saati-221.png", 
         techMin: "The lightweight, 38mm diameter case and mechanical-winding calibre with an 80-hour Powermatic reserve bring it from a classic military watch to a modern day-to-day clock.",
         subjective: "When you wear this watch on your arm, you get a simple, modest but sense of character full of duty. Away from glossy polish, it has matte and sharp lines. In the office or in nature, it pushes you to focus and be 'instant' (because you need to set it up). It is a true watch enthusiast choice that can completely change your clothing style with a leather NATO strap.",
         link: "#"
@@ -59,7 +59,7 @@ const blogPosts = [
         date: "October 20, 2025",
         tag: "Classic",
         // Lütfen görsel yolunu güncelleyin:
-        image: "img/omega/omega-speedmaster-professional-example.jpg", 
+        image: "https://static.ticimax.cloud/45295/uploads/urunresimleri/buyuk/omega-310.30.42.50.01-df3dc6.jpg", 
         techMin: "The legendary manual winding caliber, 1861/3861 (regardless of the account), is what makes it the 'clock to the Moon'. The waterproof value is modest compared to diver's watches.",
         subjective: "Speedmaster is more of a history lesson than watchmaking. The mechanical vibration felt when you run the chronograph makes you travel in time. This is a legacy, a symbol for more than an hour. Wearing it is not your outfit, it's part of your story. It always creates a special situation.",
         link: "#"
@@ -71,7 +71,7 @@ const blogPosts = [
         date: "September 28, 2025",
         tag: "Budget",
         // Lütfen görsel yolunu güncelleyin:
-        image: "img/orient/orient-bambino-ra-ac0009s10b-example.png", 
+        image: "https://www.aslansaat.com/orient-otomatik-erkek-kol-saati-fac00009n0-1834-bambino-12073-18-B.jpg", 
         techMin: "Most models have a Japanese in-house mechanism (F6724). But more than technical specifications, the curved glass and elegant dial make it a 'Dress Watch' classic.",
         subjective: "Bambino's domed crystal, the way it captures light and its elegant hands give it the aesthetic of 10 times more expensive watches. This watch is the perfect choice for your first job interview, wedding or an official event. It looks great with your suit or blazer jacket. You should see this watch as a high-quality vintage dream sold at a cheap price.",
         link: "#"
