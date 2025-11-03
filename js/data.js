@@ -133,19 +133,19 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "N/A (Quartz)", lug_width: "22mm", is_chronograph: "Yes", thickness: "11.1mm", movement_calibre: "ETA G10.212", jewels: "4", frequency_vph: "N/A", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Tachymeter"
   },
   { 
-    id: "t7", brand: "Tissot", model: "Chemin des Tourelles Powermatic 80", movement: "Automatic", diameter: "42mm", waterResistance: "50m", weight: "85g", price: "720€", image: "img/tissot/tourelles.png",
+    id: "t7", brand: "Tissot", model: "Chemin des Tourelles Powermatic 80", movement: "Automatic", diameter: "42mm", waterResistance: "50m", weight: "85g", price: "720€", image: "https://static.ticimax.cloud/52411/uploads/urunresimleri/buyuk/tissot-chemin-des-tourelles-powermatic-ae33-0.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "21mm", is_chronograph: "No", thickness: "11.1mm", movement_calibre: "Powermatic 80.111", jewels: "23", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "t8", brand: "Tissot", model: "Heritage Visodate Powermatic 80", movement: "Automatic", diameter: "42mm", waterResistance: "30m", weight: "82g", price: "590€", image: "img/tissot/visodate.png",
+    id: "t8", brand: "Tissot", model: "Heritage Visodate Powermatic 80", movement: "Automatic", diameter: "42mm", waterResistance: "30m", weight: "82g", price: "590€", image: "https://www.abtsaat.com/productimages/100604/original/t118.430.11.041.00_1.png",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "20mm", is_chronograph: "No", thickness: "12.1mm", movement_calibre: "Powermatic 80.121", jewels: "25", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "t9", brand: "Tissot", model: "Supersport Chrono", movement: "Quartz", diameter: "45.5mm", waterResistance: "100m", weight: "120g", price: "350€", image: "img/tissot/supersport.png",
+    id: "t9", brand: "Tissot", model: "Supersport Chrono", movement: "Quartz", diameter: "45.5mm", waterResistance: "100m", weight: "120g", price: "350€", image: "https://static.ticimax.cloud/52411/uploads/urunresimleri/buyuk/tissot-t1256171104100-d3ba4d.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "N/A (Quartz)", lug_width: "22mm", is_chronograph: "Yes", thickness: "11.9mm", movement_calibre: "ETA G10.212", jewels: "4", frequency_vph: "N/A", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Tachymeter"
   },
   { 
-    id: "t10", brand: "Tissot", model: "Sideral S Powermatic 80", movement: "Automatic", diameter: "41mm", waterResistance: "300m", weight: "60g", price: "900€", image: "img/tissot/sideral.png",
+    id: "t10", brand: "Tissot", model: "Sideral S Powermatic 80", movement: "Automatic", diameter: "41mm", waterResistance: "300m", weight: "60g", price: "900€", image: "https://www.abtsaat.com/productimages/101819/original/tissot-t1454079705700-otomatik-saat-erkek-kol-saati-4.jpg",
     case_material: "Forged Carbon", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "20mm", is_chronograph: "No", thickness: "14.4mm", movement_calibre: "Powermatic 80.111", jewels: "23", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Rubber", has_date: "Yes", bezel_function: "Diver's (Unidirectional)"
   },
   { 
