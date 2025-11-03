@@ -82,7 +82,7 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Sapphire (Box-Shaped)", power_reserve: "70 hours", lug_width: "19mm", is_chronograph: "No", thickness: "9.9mm", movement_calibre: "6R31", jewels: "24", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Leather", has_date: "No", bezel_function: "Fixed"
   },
   { 
-    id: "s5", brand: "Seiko", model: "Prospex Speedtimer SSC911P1", movement: "Solar Quartz Chrono", diameter: "41.4mm", waterResistance: "100m", weight: "150g", price: "690€", image: "img/seiko/speedtimer.png",
+    id: "s5", brand: "Seiko", model: "Prospex Speedtimer SSC911P1", movement: "Solar Quartz Chrono", diameter: "41.4mm", waterResistance: "100m", weight: "150g", price: "690€", image: "https://www.abtsaat.com/productimages/101490/original/seiko-ssc911p1-speedtimer-erkek-kol-saati-1.png",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "Solar (6 months)", lug_width: "20mm", is_chronograph: "Yes", thickness: "13.3mm", movement_calibre: "V192", jewels: "N/A", frequency_vph: "N/A", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Tachymeter"
   },
   { 
@@ -113,23 +113,23 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "12mm (Integrated)", is_chronograph: "No", thickness: "10.9mm", movement_calibre: "Powermatic 80.111", jewels: "23", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "t2", brand: "Tissot", model: "PRX Quartz Chronograph", movement: "Quartz", diameter: "42mm", waterResistance: "100m", weight: "145g", price: "550€", image: "img/tissot/prx-quartz-chrono.jpg",
+    id: "t2", brand: "Tissot", model: "PRX Quartz Chronograph", movement: "Quartz", diameter: "42mm", waterResistance: "100m", weight: "145g", price: "550€", image: "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/52411/uploads/urunresimleri/buyuk/tissot-prx-automatic-chronograph-t1374-b1c488.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "N/A (Quartz)", lug_width: "12mm (Integrated)", is_chronograph: "Yes", thickness: "11.6mm", movement_calibre: "G10.212", jewels: "4", frequency_vph: "N/A", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "t3", brand: "Tissot", model: "Le Locle Powermatic 80", movement: "Automatic", diameter: "39.3mm", waterResistance: "30m", weight: "75g", price: "590€", image: "img/tissot/le-locle.png",
+    id: "t3", brand: "Tissot", model: "Le Locle Powermatic 80", movement: "Automatic", diameter: "39.3mm", waterResistance: "30m", weight: "75g", price: "590€", image: "https://static.ticimax.cloud/52411/uploads/urunresimleri/buyuk/tissot-le-locle-t0064071603300-erkek-k--49213.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "20mm", is_chronograph: "No", thickness: "9.8mm", movement_calibre: "Powermatic 80.111", jewels: "23", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "t4", brand: "Tissot", model: "Seastar 1000 Powermatic 80", movement: "Automatic", diameter: "43mm", waterResistance: "300m", weight: "140g", price: "750€", image: "img/tissot/seastar.png",
+    id: "t4", brand: "Tissot", model: "Seastar 1000 Powermatic 80", movement: "Automatic", diameter: "43mm", waterResistance: "300m", weight: "140g", price: "750€", image: "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=99/52411/uploads/urunresimleri/buyuk/tissot-t1208073704100-c366a5.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "21mm", is_chronograph: "No", thickness: "12.7mm", movement_calibre: "Powermatic 80.111", jewels: "23", frequency_vph: "21600", crown_type: "Screw-down", strap_material: "Rubber", has_date: "Yes", bezel_function: "Diver's (Unidirectional)"
   },
   { 
-    id: "t5", brand: "Tissot", model: "Gentleman Powermatic 80 Silicium", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "155g", price: "850€", image: "img/tissot/gentleman.png",
+    id: "t5", brand: "Tissot", model: "Gentleman Powermatic 80 Silicium", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "155g", price: "850€", image: "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/52411/uploads/urunresimleri/buyuk/tissot-gentleman-powermatic-80-t127407-0c9b2b.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "80 hours", lug_width: "21mm", is_chronograph: "No", thickness: "11.5mm", movement_calibre: "Powermatic 80.811", jewels: "25", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "t6", brand: "Tissot", model: "V8 Alpine Limited Edition Chrono", movement: "Quartz", diameter: "42.5mm", waterResistance: "100m", weight: "110g", price: "400€", image: "img/tissot/v8.png",
+    id: "t6", brand: "Tissot", model: "V8 Alpine Limited Edition Chrono", movement: "Quartz", diameter: "42.5mm", waterResistance: "100m", weight: "110g", price: "400€", image: "https://www.jurawatches.co.uk/cdn/shop/products/Tissot_Watch_V8_Alpine_Special_Edition_T1064171620101.png?v=1512579459",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "N/A (Quartz)", lug_width: "22mm", is_chronograph: "Yes", thickness: "11.1mm", movement_calibre: "ETA G10.212", jewels: "4", frequency_vph: "N/A", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Tachymeter"
   },
   { 
