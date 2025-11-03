@@ -219,35 +219,35 @@ const watches = [
     case_material: "Oystersteel", crystal_type: "Sapphire", power_reserve: "72 hours", lug_width: "20mm", is_chronograph: "Yes", thickness: "12.2mm", movement_calibre: "Calibre 4130", jewels: "44", frequency_vph: "28800", crown_type: "Screw-down (Triplock)", strap_material: "Oyster Bracelet", has_date: "No", bezel_function: "Tachymeter"
   },
   { 
-    id: "r3", brand: "Rolex", model: "GMT-Master II 126710BLRO (Pepsi)", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "150g", price: "11500€", image: "img/rolex/gmt-pepsi.png",
+    id: "r3", brand: "Rolex", model: "GMT-Master II 126710BLRO (Pepsi)", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "150g", price: "11500€", image: "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1920/v1/catalogue/2025/upright-c/m126710blro-0001.jpg",
     case_material: "Oystersteel", crystal_type: "Sapphire (with Cyclops)", power_reserve: "70 hours", lug_width: "20mm", is_chronograph: "No", thickness: "12.1mm", movement_calibre: "Calibre 3285", jewels: "31", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Jubilee Bracelet", has_date: "Yes", bezel_function: "GMT (Bidirectional)"
   },
   { 
-    id: "r4", brand: "Rolex", model: "Datejust 41 126334", movement: "Automatic", diameter: "41mm", waterResistance: "100m", weight: "135g", price: "9500€", image: "img/rolex/datejust.png",
+    id: "r4", brand: "Rolex", model: "Datejust 41 126334", movement: "Automatic", diameter: "41mm", waterResistance: "100m", weight: "135g", price: "9500€", image: "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1920/v1/catalogue/2025/upright-c/m126334-0028.jpg",
     case_material: "Oystersteel / White Gold", crystal_type: "Sapphire (with Cyclops)", power_reserve: "70 hours", lug_width: "20mm", is_chronograph: "No", thickness: "11.7mm", movement_calibre: "Calibre 3235", jewels: "31", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Jubilee Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "r5", brand: "Rolex", model: "Explorer 124270 (36mm)", movement: "Automatic", diameter: "36mm", waterResistance: "100m", weight: "120g", price: "7000€", image: "img/rolex/explorer.png",
+    id: "r5", brand: "Rolex", model: "Explorer 124270 (36mm)", movement: "Automatic", diameter: "36mm", waterResistance: "100m", weight: "120g", price: "7000€", image: "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1920/v1/catalogue/2025/upright-c/m124270-0001.jpg",
     case_material: "Oystersteel", crystal_type: "Sapphire", power_reserve: "70 hours", lug_width: "19mm", is_chronograph: "No", thickness: "11.5mm", movement_calibre: "Calibre 3230", jewels: "31", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Oyster Bracelet", has_date: "No", bezel_function: "Fixed"
   },
   { 
-    id: "r6", brand: "Rolex", model: "Sea-Dweller 126600", movement: "Automatic", diameter: "43mm", waterResistance: "1220m", weight: "215g", price: "13500€", image: "img/rolex/seadweller.png",
+    id: "r6", brand: "Rolex", model: "Sea-Dweller 126600", movement: "Automatic", diameter: "43mm", waterResistance: "1220m", weight: "215g", price: "13500€", image: "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1920/v1/catalogue/2025/upright-c/m126600-0002.jpg",
     case_material: "Oystersteel", crystal_type: "Sapphire", power_reserve: "70 hours", lug_width: "22mm", is_chronograph: "No", thickness: "15mm", movement_calibre: "Calibre 3235", jewels: "31", frequency_vph: "28800", crown_type: "Screw-down (Triplock)", strap_material: "Oyster Bracelet", has_date: "Yes", bezel_function: "Diver's (Unidirectional)"
   },
   { 
-    id: "r7", brand: "Rolex", model: "Oyster Perpetual 41 124300", movement: "Automatic", diameter: "41mm", waterResistance: "100m", weight: "130g", price: "5500€", image: "img/rolex/oyster-perpetual.png",
+    id: "r7", brand: "Rolex", model: "Oyster Perpetual 41 124300", movement: "Automatic", diameter: "41mm", waterResistance: "100m", weight: "130g", price: "5500€", image: "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-grid/c_limit,w_2440/v1/catalogue/2024/upright-bba-with-shadow/m124300-0001",
     case_material: "Oystersteel", crystal_type: "Sapphire", power_reserve: "70 hours", lug_width: "21mm", is_chronograph: "No", thickness: "11.7mm", movement_calibre: "Calibre 3230", jewels: "31", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Oyster Bracelet", has_date: "No", bezel_function: "Fixed"
   },
   { 
-    id: "r8", brand: "Rolex", model: "Sky-Dweller 326934", movement: "Automatic", diameter: "42mm", waterResistance: "100m", weight: "165g", price: "15000€", image: "img/rolex/sky-dweller.png",
+    id: "r8", brand: "Rolex", model: "Sky-Dweller 326934", movement: "Automatic", diameter: "42mm", waterResistance: "100m", weight: "165g", price: "15000€", image: "https://img.chrono24.com/images/uhren/32785617-fgt89cejfj0ki3uu57simlbg-ExtraLarge.jpg",
     case_material: "Oystersteel / White Gold", crystal_type: "Sapphire (with Cyclops)", power_reserve: "72 hours", lug_width: "21mm", is_chronograph: "No", thickness: "14.1mm", movement_calibre: "Calibre 9001", jewels: "40", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Oyster Bracelet", has_date: "Yes", bezel_function: "Annual Calendar/GMT"
   },
   { 
-    id: "r9", brand: "Rolex", model: "Yacht-Master 40 126622", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "140g", price: "10500€", image: "img/rolex/yachtmaster.png",
+    id: "r9", brand: "Rolex", model: "Yacht-Master 40 126622", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "140g", price: "10500€", image: "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1920/v1/catalogue/2025/upright-c/m126622-0001.jpg",
     case_material: "Rolesium (Steel/Platinum)", crystal_type: "Sapphire (with Cyclops)", power_reserve: "70 hours", lug_width: "20mm", is_chronograph: "No", thickness: "11.7mm", movement_calibre: "Calibre 3235", jewels: "31", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Oyster Bracelet", has_date: "Yes", bezel_function: "Bidirectional"
   },
   { 
-    id: "r10", brand: "Rolex", model: "Milgauss 116400GV", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "157g", price: "8000€", image: "img/rolex/milgauss.png",
+    id: "r10", brand: "Rolex", model: "Milgauss 116400GV", movement: "Automatic", diameter: "40mm", waterResistance: "100m", weight: "157g", price: "8000€", image: "https://luxurywatchesusa.com/wp-content/uploads/2019/08/Mil-116400GV.jpg.webp",
     case_material: "Oystersteel", crystal_type: "Sapphire (Green Glass)", power_reserve: "48 hours", lug_width: "20mm", is_chronograph: "No", thickness: "13.5mm", movement_calibre: "Calibre 3131", jewels: "31", frequency_vph: "28800", crown_type: "Screw-down", strap_material: "Oyster Bracelet", has_date: "No", bezel_function: "Fixed"
   },
 
