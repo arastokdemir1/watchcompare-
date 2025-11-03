@@ -33,6 +33,42 @@ const blogPosts = [
         techMin: "Rolex'in kusursuz kalitesi ve kalibresi tartışılmaz. Fakat tarih penceresinin olmaması, Submariner'ı neden bu kadar özel kılıyor?",
         subjective: "Submariner, saatçilik dünyasının 'kültürel taşı'dır. Tarih penceresinin olmaması, kadranı simetrik ve temiz tutarak, saatin zamanı gösterme işlevine odaklanmasını sağlıyor. Bu, zihinsel bir rahatlama sağlar. O bir statü sembolü olabilir ama aynı zamanda günlük hayatın karmaşasında basitliği, mükemmelliği ve sonsuz bir güveni temsil eder. Onu taktığınızda, hayatınızın kontrol altında olduğunu hissedersiniz. Bu paha biçilmez bir histir.",
         link: "#"
+    },
+    {
+        id: 4,
+        title: "Hamilton Khaki Field Mechanical: Minimalist Askeri Ruh",
+        author: "WatchCompare Editörü",
+        date: "3 Kasım 2025",
+        tag: "Askeri",
+        // Lütfen görsel yolunu güncelleyin:
+        image: "img/hamilton/hamilton-khaki-field-h69439931-example.png", 
+        techMin: "Hafif, 38 mm çaplı kasa ve 80 saatlik Powermatic rezervine sahip mekanik kurmalı kalibre, onu klasik bir askeri saatten modern bir günlük saate taşıyor.",
+        subjective: "Bu saati kolunuza taktığınızda, sade, mütevazı ama görev bilinciyle dolu bir karakter hissine kapılırsınız. Parlak ciladan uzak, mat ve keskin hatlara sahiptir. Ofiste veya doğada, sizi odaklanmaya ve 'anlık' olmaya iter (çünkü kurmanız gerekir). Deri bir NATO kayışıyla giyim tarzınızı tamamen değiştirebilecek, gerçek bir saat tutkunu seçimidir.",
+        link: "#"
+    },
+    {
+        id: 5,
+        title: "Omega Speedmaster Professional (Moonwatch): Bir Efsanenin Ağırlığı",
+        author: "Aras Tokdemir",
+        date: "20 Ekim 2025",
+        tag: "Klasik",
+        // Lütfen görsel yolunu güncelleyin:
+        image: "img/omega/omega-speedmaster-professional-example.jpg", 
+        techMin: "Efsanevi manuel kurmalı kalibre, 1861/3861 (hesap fark etmeksizin), onu 'Ay'a giden saat' yapan şeydir. Su geçirmezlik değeri, dalgıç saatlerine göre mütevazıdır.",
+        subjective: "Speedmaster, saatçilikten çok bir tarih dersidir. Kronografı çalıştırdığınızda hissedilen mekanik titreşim, size zamanda yolculuk yaptırır. Bu bir saatten çok bir miras, bir semboldür. Onu takmak, kıyafetinizin değil, hikayenizin bir parçasıdır. Her zaman özel bir durum yaratır.",
+        link: "#"
+    },
+    {
+        id: 6,
+        title: "Orient Bambino: Bir Vintage Rüyası, Modern Bütçe",
+        author: "WatchCompare Editörü",
+        date: "28 Eylül 2025",
+        tag: "Bütçe",
+        // Lütfen görsel yolunu güncelleyin:
+        image: "img/orient/orient-bambino-ra-ac0009s10b-example.png", 
+        techMin: "Çoğu modelde Japon in-house mekanizma (F6724) bulunur. Ancak teknik özelliklerden çok, bombeli camı ve zarif kadranı, onu bir 'Dress Watch' klasiği yapar.",
+        subjective: "Bambino'nun bombeli kristali, ışığı yakalama şekli ve zarif ibreleri, ona 10 kat daha pahalı saatlerin estetiğini kazandırır. Bu saat, ilk iş görüşmeniz, düğününüz veya resmi bir etkinliğiniz için mükemmel bir seçimdir. Takım elbisenizle veya blazer ceketinizle harika durur. Bu saati, ucuz fiyata satılan yüksek kaliteli bir vintage rüyası olarak görmelisiniz.",
+        link: "#"
     }
 ];
 
