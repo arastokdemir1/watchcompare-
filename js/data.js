@@ -66,7 +66,7 @@ const brands = [
 const watches = [
   // --- SEIKO MODELS (10 Pieces) ---
   { 
-    id: "s1", brand: "Seiko", model: "Presage SRPB43 'Cocktail Time'", movement: "Automatic", diameter: "40.5mm", waterResistance: "50m", weight: "140g", price: "430€", image: "img/seiko/SRPB43J1.png",
+    id: "s1", brand: "Seiko", model: "Presage SRPB43 'Cocktail Time'", movement: "Automatic", diameter: "40.5mm", waterResistance: "50m", weight: "140g", price: "430€", image: "https://img.chrono24.com/images/uhren/28006817-offdhgi7owuvyhspt7uycdbg-ExtraLarge.jpg",
     case_material: "Stainless Steel", crystal_type: "Hardlex (Domed)", power_reserve: "41 hours", lug_width: "20mm", is_chronograph: "No", thickness: "11.8mm", movement_calibre: "4R35", jewels: "23", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Leather", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
@@ -90,7 +90,7 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Hardlex", power_reserve: "41 hours", lug_width: "22mm", is_chronograph: "No", thickness: "13.4mm", movement_calibre: "4R36", jewels: "24", frequency_vph: "21600", crown_type: "Screw-down", strap_material: "Silicone", has_date: "Yes", bezel_function: "Diver's (Unidirectional)"
   },
   { 
-    id: "s7", brand: "Seiko", model: "Alpinist SPB197J1", movement: "Automatic", diameter: "39.5mm", waterResistance: "200m", weight: "150g", price: "790€", image: "img/seiko/alpinist.png",
+    id: "s7", brand: "Seiko", model: "Alpinist SPB197J1", movement: "Automatic", diameter: "39.5mm", waterResistance: "200m", weight: "150g", price: "790€", image: "https://www.abtsaat.com/productimages/100634/original/spb197j1.jpg",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "70 hours", lug_width: "20mm", is_chronograph: "No", thickness: "13.2mm", movement_calibre: "6R35", jewels: "24", frequency_vph: "21600", crown_type: "Screw-down", strap_material: "Leather", has_date: "Yes", bezel_function: "Compass (Inner)"
   },
   { 
@@ -102,7 +102,7 @@ const watches = [
     case_material: "Stainless Steel", crystal_type: "Hardlex", power_reserve: "41 hours", lug_width: "20mm", is_chronograph: "No", thickness: "11.5mm", movement_calibre: "4R36", jewels: "24", frequency_vph: "21600", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Fixed"
   },
   { 
-    id: "s10", brand: "Seiko", model: "Panda Chronograph SSC813", movement: "Solar Quartz Chrono", diameter: "39mm", waterResistance: "100m", weight: "120g", price: "600€", image: "img/seiko/panda.png",
+    id: "s10", brand: "Seiko", model: "Panda Chronograph SSC813", movement: "Solar Quartz Chrono", diameter: "39mm", waterResistance: "100m", weight: "120g", price: "600€", image: "https://www.abtsaat.com/productimages/100806/original/seiko-ssc813p-prospex-speedtimer-erkek-kol-saati-1.png",
     case_material: "Stainless Steel", crystal_type: "Sapphire", power_reserve: "Solar (6 months)", lug_width: "20mm", is_chronograph: "Yes", thickness: "12.3mm", movement_calibre: "V192", jewels: "N/A", frequency_vph: "N/A", crown_type: "Push/Pull", strap_material: "Steel Bracelet", has_date: "Yes", bezel_function: "Tachymeter"
   },
 
